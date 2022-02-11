@@ -17,6 +17,8 @@
 		6ACDFAF627B6A2AD008EF188 /* MyPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF527B6A2AD008EF188 /* MyPlannerView.swift */; };
 		6ACDFAF827B6A2FC008EF188 /* TaskRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF727B6A2FC008EF188 /* TaskRectangle.swift */; };
 		6ACDFAFA27B6A5CD008EF188 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */; };
+		6ACDFAFF27B6A939008EF188 /* TaskControllerCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */; };
+		6ACDFB0227B6AFA2008EF188 /* TaskModelCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		6ACDFAF527B6A2AD008EF188 /* MyPlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerView.swift; sourceTree = "<group>"; };
 		6ACDFAF727B6A2FC008EF188 /* TaskRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRectangle.swift; sourceTree = "<group>"; };
 		6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerCD.swift; sourceTree = "<group>"; };
+		6ACDFB0127B6AFA2008EF188 /* TaskModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModelCD.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */,
+				6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		6ACDFAF327B69AE3008EF188 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,8 +306,10 @@
 			files = (
 				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
 				6ACDFAF627B6A2AD008EF188 /* MyPlannerView.swift in Sources */,
+				6ACDFB0227B6AFA2008EF188 /* TaskModelCD.xcdatamodeld in Sources */,
 				6ACDFAFA27B6A5CD008EF188 /* TaskModel.swift in Sources */,
 				6ACDFAF827B6A2FC008EF188 /* TaskRectangle.swift in Sources */,
+				6ACDFAFF27B6A939008EF188 /* TaskControllerCD.swift in Sources */,
 				6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +657,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6ACDFB0127B6AFA2008EF188 /* TaskModelCD.xcdatamodel */,
+			);
+			currentVersion = 6ACDFB0127B6AFA2008EF188 /* TaskModelCD.xcdatamodel */;
+			path = TaskModelCD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6ACDFABC27B69AA5008EF188 /* Project object */;
 }
