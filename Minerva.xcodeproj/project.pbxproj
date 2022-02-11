@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */; };
-		6ACDFACA27B69AA5008EF188 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC927B69AA5008EF188 /* ContentView.swift */; };
+		6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC927B69AA5008EF188 /* MainView.swift */; };
 		6ACDFACC27B69AA6008EF188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACDFACB27B69AA6008EF188 /* Assets.xcassets */; };
 		6ACDFACF27B69AA6008EF188 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACDFACE27B69AA6008EF188 /* Preview Assets.xcassets */; };
 		6ACDFAD927B69AA6008EF188 /* MinervaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAD827B69AA6008EF188 /* MinervaTests.swift */; };
 		6ACDFAE327B69AA6008EF188 /* MinervaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAE227B69AA6008EF188 /* MinervaUITests.swift */; };
 		6ACDFAE527B69AA6008EF188 /* MinervaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAE427B69AA6008EF188 /* MinervaUITestsLaunchTests.swift */; };
+		6ACDFAF627B6A2AD008EF188 /* MyPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF527B6A2AD008EF188 /* MyPlannerView.swift */; };
+		6ACDFAF827B6A2FC008EF188 /* TaskRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF727B6A2FC008EF188 /* TaskRectangle.swift */; };
+		6ACDFAFA27B6A5CD008EF188 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		6ACDFAC427B69AA5008EF188 /* Minerva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minerva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaApp.swift; sourceTree = "<group>"; };
-		6ACDFAC927B69AA5008EF188 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6ACDFAC927B69AA5008EF188 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6ACDFACB27B69AA6008EF188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ACDFACE27B69AA6008EF188 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6ACDFAD427B69AA6008EF188 /* MinervaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinervaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,9 @@
 		6ACDFADE27B69AA6008EF188 /* MinervaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinervaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACDFAE227B69AA6008EF188 /* MinervaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaUITests.swift; sourceTree = "<group>"; };
 		6ACDFAE427B69AA6008EF188 /* MinervaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6ACDFAF527B6A2AD008EF188 /* MyPlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlannerView.swift; sourceTree = "<group>"; };
+		6ACDFAF727B6A2FC008EF188 /* TaskRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRectangle.swift; sourceTree = "<group>"; };
+		6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,10 @@
 		6ACDFAC627B69AA5008EF188 /* Minerva */ = {
 			isa = PBXGroup;
 			children = (
+				6ACDFAF327B69AE3008EF188 /* Controller */,
+				6ACDFAF227B69ADF008EF188 /* View */,
+				6ACDFAF127B69AD9008EF188 /* Model */,
 				6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */,
-				6ACDFAC927B69AA5008EF188 /* ContentView.swift */,
 				6ACDFACB27B69AA6008EF188 /* Assets.xcassets */,
 				6ACDFACD27B69AA6008EF188 /* Preview Content */,
 			);
@@ -125,6 +133,39 @@
 				6ACDFAE427B69AA6008EF188 /* MinervaUITestsLaunchTests.swift */,
 			);
 			path = MinervaUITests;
+			sourceTree = "<group>";
+		};
+		6ACDFAF127B69AD9008EF188 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6ACDFAF227B69ADF008EF188 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAC927B69AA5008EF188 /* MainView.swift */,
+				6ACDFAF527B6A2AD008EF188 /* MyPlannerView.swift */,
+				6ACDFAF427B69AEB008EF188 /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6ACDFAF327B69AE3008EF188 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6ACDFAF427B69AEB008EF188 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAF727B6A2FC008EF188 /* TaskRectangle.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACDFACA27B69AA5008EF188 /* ContentView.swift in Sources */,
+				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
+				6ACDFAF627B6A2AD008EF188 /* MyPlannerView.swift in Sources */,
+				6ACDFAFA27B6A5CD008EF188 /* TaskModel.swift in Sources */,
+				6ACDFAF827B6A2FC008EF188 /* TaskRectangle.swift in Sources */,
 				6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
