@@ -15,10 +15,14 @@ struct MyPlannerView: View{
         ScrollView{
             DatePicker("", selection: $date, displayedComponents: [.date])
                 .datePickerStyle(.graphical)
+                .accentColor(.purple)
             
-            Text("Attività del giorno: \(date.formatted(date: .abbreviated, time: .omitted)) ")
+            Text("Attività del \(date.formatted(date: .abbreviated, time: .omitted)) ")
             
-            
+            ForEach(0...3, id: \.self){ _ in
+                TaskRectangle()
+            }
+
         }
     }
 }

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
+    let savedTask: TaskControllerCD
+
     var body: some View {
         TabView{
-            Text("Hello")
+            MyPlannerView()
                 .tabItem{
                     Label("Planner", systemImage: "square.and.pencil")
                 }
@@ -28,6 +30,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(savedTask: TaskControllerCD())
     }
 }
