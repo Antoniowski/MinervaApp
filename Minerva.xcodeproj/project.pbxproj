@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */; };
+		6ACDFACA27B69AA5008EF188 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC927B69AA5008EF188 /* ContentView.swift */; };
+		6ACDFACC27B69AA6008EF188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACDFACB27B69AA6008EF188 /* Assets.xcassets */; };
+		6ACDFACF27B69AA6008EF188 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACDFACE27B69AA6008EF188 /* Preview Assets.xcassets */; };
+		6ACDFAD927B69AA6008EF188 /* MinervaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAD827B69AA6008EF188 /* MinervaTests.swift */; };
+		6ACDFAE327B69AA6008EF188 /* MinervaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAE227B69AA6008EF188 /* MinervaUITests.swift */; };
+		6ACDFAE527B69AA6008EF188 /* MinervaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAE427B69AA6008EF188 /* MinervaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6ACDFAD527B69AA6008EF188 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ACDFABC27B69AA5008EF188 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ACDFAC327B69AA5008EF188;
+			remoteInfo = Minerva;
+		};
+		6ACDFADF27B69AA6008EF188 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ACDFABC27B69AA5008EF188 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ACDFAC327B69AA5008EF188;
+			remoteInfo = Minerva;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6ACDFAC427B69AA5008EF188 /* Minerva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minerva.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaApp.swift; sourceTree = "<group>"; };
+		6ACDFAC927B69AA5008EF188 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6ACDFACB27B69AA6008EF188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6ACDFACE27B69AA6008EF188 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6ACDFAD427B69AA6008EF188 /* MinervaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinervaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACDFAD827B69AA6008EF188 /* MinervaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaTests.swift; sourceTree = "<group>"; };
+		6ACDFADE27B69AA6008EF188 /* MinervaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinervaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ACDFAE227B69AA6008EF188 /* MinervaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaUITests.swift; sourceTree = "<group>"; };
+		6ACDFAE427B69AA6008EF188 /* MinervaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6ACDFAC127B69AA5008EF188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACDFAD127B69AA6008EF188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACDFADB27B69AA6008EF188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6ACDFABB27B69AA5008EF188 = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAC627B69AA5008EF188 /* Minerva */,
+				6ACDFAD727B69AA6008EF188 /* MinervaTests */,
+				6ACDFAE127B69AA6008EF188 /* MinervaUITests */,
+				6ACDFAC527B69AA5008EF188 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6ACDFAC527B69AA5008EF188 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAC427B69AA5008EF188 /* Minerva.app */,
+				6ACDFAD427B69AA6008EF188 /* MinervaTests.xctest */,
+				6ACDFADE27B69AA6008EF188 /* MinervaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6ACDFAC627B69AA5008EF188 /* Minerva */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */,
+				6ACDFAC927B69AA5008EF188 /* ContentView.swift */,
+				6ACDFACB27B69AA6008EF188 /* Assets.xcassets */,
+				6ACDFACD27B69AA6008EF188 /* Preview Content */,
+			);
+			path = Minerva;
+			sourceTree = "<group>";
+		};
+		6ACDFACD27B69AA6008EF188 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFACE27B69AA6008EF188 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6ACDFAD727B69AA6008EF188 /* MinervaTests */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAD827B69AA6008EF188 /* MinervaTests.swift */,
+			);
+			path = MinervaTests;
+			sourceTree = "<group>";
+		};
+		6ACDFAE127B69AA6008EF188 /* MinervaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDFAE227B69AA6008EF188 /* MinervaUITests.swift */,
+				6ACDFAE427B69AA6008EF188 /* MinervaUITestsLaunchTests.swift */,
+			);
+			path = MinervaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6ACDFAC327B69AA5008EF188 /* Minerva */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ACDFAE827B69AA6008EF188 /* Build configuration list for PBXNativeTarget "Minerva" */;
+			buildPhases = (
+				6ACDFAC027B69AA5008EF188 /* Sources */,
+				6ACDFAC127B69AA5008EF188 /* Frameworks */,
+				6ACDFAC227B69AA5008EF188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Minerva;
+			productName = Minerva;
+			productReference = 6ACDFAC427B69AA5008EF188 /* Minerva.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6ACDFAD327B69AA6008EF188 /* MinervaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ACDFAEB27B69AA6008EF188 /* Build configuration list for PBXNativeTarget "MinervaTests" */;
+			buildPhases = (
+				6ACDFAD027B69AA6008EF188 /* Sources */,
+				6ACDFAD127B69AA6008EF188 /* Frameworks */,
+				6ACDFAD227B69AA6008EF188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ACDFAD627B69AA6008EF188 /* PBXTargetDependency */,
+			);
+			name = MinervaTests;
+			productName = MinervaTests;
+			productReference = 6ACDFAD427B69AA6008EF188 /* MinervaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6ACDFADD27B69AA6008EF188 /* MinervaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ACDFAEE27B69AA6008EF188 /* Build configuration list for PBXNativeTarget "MinervaUITests" */;
+			buildPhases = (
+				6ACDFADA27B69AA6008EF188 /* Sources */,
+				6ACDFADB27B69AA6008EF188 /* Frameworks */,
+				6ACDFADC27B69AA6008EF188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ACDFAE027B69AA6008EF188 /* PBXTargetDependency */,
+			);
+			name = MinervaUITests;
+			productName = MinervaUITests;
+			productReference = 6ACDFADE27B69AA6008EF188 /* MinervaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6ACDFABC27B69AA5008EF188 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					6ACDFAC327B69AA5008EF188 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					6ACDFAD327B69AA6008EF188 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 6ACDFAC327B69AA5008EF188;
+					};
+					6ACDFADD27B69AA6008EF188 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 6ACDFAC327B69AA5008EF188;
+					};
+				};
+			};
+			buildConfigurationList = 6ACDFABF27B69AA5008EF188 /* Build configuration list for PBXProject "Minerva" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6ACDFABB27B69AA5008EF188;
+			productRefGroup = 6ACDFAC527B69AA5008EF188 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6ACDFAC327B69AA5008EF188 /* Minerva */,
+				6ACDFAD327B69AA6008EF188 /* MinervaTests */,
+				6ACDFADD27B69AA6008EF188 /* MinervaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6ACDFAC227B69AA5008EF188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACDFACF27B69AA6008EF188 /* Preview Assets.xcassets in Resources */,
+				6ACDFACC27B69AA6008EF188 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACDFAD227B69AA6008EF188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACDFADC27B69AA6008EF188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6ACDFAC027B69AA5008EF188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACDFACA27B69AA5008EF188 /* ContentView.swift in Sources */,
+				6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACDFAD027B69AA6008EF188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACDFAD927B69AA6008EF188 /* MinervaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ACDFADA27B69AA6008EF188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ACDFAE327B69AA6008EF188 /* MinervaUITests.swift in Sources */,
+				6ACDFAE527B69AA6008EF188 /* MinervaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ACDFAD627B69AA6008EF188 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ACDFAC327B69AA5008EF188 /* Minerva */;
+			targetProxy = 6ACDFAD527B69AA6008EF188 /* PBXContainerItemProxy */;
+		};
+		6ACDFAE027B69AA6008EF188 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ACDFAC327B69AA5008EF188 /* Minerva */;
+			targetProxy = 6ACDFADF27B69AA6008EF188 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6ACDFAE627B69AA6008EF188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6ACDFAE727B69AA6008EF188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6ACDFAE927B69AA6008EF188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Minerva/Preview Content\"";
+				DEVELOPMENT_TEAM = YT6T4953M8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AntoniowskiR.Minerva;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6ACDFAEA27B69AA6008EF188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Minerva/Preview Content\"";
+				DEVELOPMENT_TEAM = YT6T4953M8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AntoniowskiR.Minerva;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6ACDFAEC27B69AA6008EF188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YT6T4953M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AntoniowskiR.MinervaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Minerva.app/Minerva";
+			};
+			name = Debug;
+		};
+		6ACDFAED27B69AA6008EF188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YT6T4953M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AntoniowskiR.MinervaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Minerva.app/Minerva";
+			};
+			name = Release;
+		};
+		6ACDFAEF27B69AA6008EF188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YT6T4953M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AntoniowskiR.MinervaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Minerva;
+			};
+			name = Debug;
+		};
+		6ACDFAF027B69AA6008EF188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YT6T4953M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AntoniowskiR.MinervaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Minerva;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6ACDFABF27B69AA5008EF188 /* Build configuration list for PBXProject "Minerva" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACDFAE627B69AA6008EF188 /* Debug */,
+				6ACDFAE727B69AA6008EF188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ACDFAE827B69AA6008EF188 /* Build configuration list for PBXNativeTarget "Minerva" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACDFAE927B69AA6008EF188 /* Debug */,
+				6ACDFAEA27B69AA6008EF188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ACDFAEB27B69AA6008EF188 /* Build configuration list for PBXNativeTarget "MinervaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACDFAEC27B69AA6008EF188 /* Debug */,
+				6ACDFAED27B69AA6008EF188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ACDFAEE27B69AA6008EF188 /* Build configuration list for PBXNativeTarget "MinervaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACDFAEF27B69AA6008EF188 /* Debug */,
+				6ACDFAF027B69AA6008EF188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6ACDFABC27B69AA5008EF188 /* Project object */;
+}
