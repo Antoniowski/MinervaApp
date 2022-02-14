@@ -17,6 +17,7 @@ struct TaskRectangle: View {
             ZStack{
                 Image(systemName: "checkmark")
                     .foregroundColor(Color.blue)
+                
                     
             }
             .frame(width: UIScreen.main.bounds.width/9, height: 45)
@@ -47,9 +48,9 @@ struct TaskRectangle: View {
         }
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width*0.9, height: 80)
-        .background(colorScheme == .dark ? .orange : Color(red: 227/255, green: 224/255, blue: 249/255))
+        .background(colorScheme == .dark ? Color( red: 69/255, green: 74/255, blue: 114/255, opacity: 1) : Color(red: 227/255, green: 224/255, blue: 249/255))
         .cornerRadius(15)
-        .shadow(color: .gray, radius: 3, x: 2, y: 4)
+        .shadow(color: .black, radius: 3, x: 2, y: 4)
     }
     
 }

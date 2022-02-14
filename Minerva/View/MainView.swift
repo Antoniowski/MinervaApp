@@ -20,7 +20,7 @@ struct MainView: View {
                 .tabItem{
                     Label("Group", systemImage: "person.3.fill")
                 }
-            Text("Hello3")
+            Text("Stats")
                 .tabItem{
                     Label("Stats", systemImage: "chart.line.uptrend.xyaxis")
                 }
