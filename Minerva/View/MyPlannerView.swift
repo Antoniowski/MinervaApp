@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyPlannerView: View{
     
+    @EnvironmentObject var sharedData: TaskControllerCD
+    
     @State private var date = Date()
     
     var body: some View{

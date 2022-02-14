@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    let savedTask: TaskControllerCD
-
+    @EnvironmentObject var sharedData: TaskControllerCD
     var body: some View {
         TabView{
             MyPlannerView()
@@ -31,6 +30,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(savedTask: TaskControllerCD())
+        MainView()
     }
 }

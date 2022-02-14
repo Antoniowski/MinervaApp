@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MinervaApp: App {
+    let dataController = TaskControllerCD()
     var body: some Scene {
         WindowGroup {
-            MainView(savedTask: TaskControllerCD())
+            MainView()
+                .environmentObject(dataController)
         }
     }
 }
