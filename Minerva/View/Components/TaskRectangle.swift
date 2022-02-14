@@ -10,16 +10,24 @@ import SwiftUI
 struct TaskRectangle: View {
     @EnvironmentObject var sharedData: TaskControllerCD
     @Environment(\.colorScheme) var colorScheme
-
+    
+    @State var title: String = ""
+    @State var description: String = ""
+    @State var priority: PriorityLevel = .low
+    @State var isCompleted: Bool = false
+    
     var body: some View {
         
         HStack{
             
             ZStack{
-                Image(systemName: "checkmark")
-                    .foregroundColor(Color.blue)
-                
+                if isCompleted == true{
+                    Image(systemName: "checkmark")
+                        .foregroundColor(Color.blue)
                     
+                }
+                
+                
             }
             .frame(width: UIScreen.main.bounds.width/9, height: 45)
             .background(Color.white)
@@ -27,15 +35,15 @@ struct TaskRectangle: View {
             .cornerRadius(10)
             
             VStack{
-                Text ("Math")
+                Text ("\(title)")
                     .font(.custom("Noteworthy-Bold", size: 25))
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                Text ("Study first part of Chapter 3")
+                Text ("\(description)")
                     .font(.system(size: 18))
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             }
             .padding(.horizontal)
-
+            
             VStack{
                 Circle()
                     .frame(width: 10, height: 10)

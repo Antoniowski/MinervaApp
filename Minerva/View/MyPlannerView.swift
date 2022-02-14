@@ -11,6 +11,8 @@ struct MyPlannerView: View{
     
     @EnvironmentObject var sharedData: TaskControllerCD
     
+    @State private var allTasks: [TaskCD] = []
+    
     @State private var date = Date()
     @State private var isActive: Bool = false
     var body: some View{
@@ -21,15 +23,26 @@ struct MyPlannerView: View{
             
             Text("Activities for \(date.formatted(date: .abbreviated, time: .omitted)) ")
             
-            ForEach(0...2, id: \.self){ _ in
-                TaskRectangle()
+            ForEach(allTasks, id: \.self){ T in
+                TaskRectangle(title: T.title ?? "", description: T.activity_description ?? "", priority: PriorityLevel(rawValue: T.priority!) ?? .low, isCompleted: T.completed)
             }
             .padding(5)
 
-            NewTaskRectangle(isActive: $isActive)
+            NewTaskRectangle(isActive: $isActive, allTasks: $allTasks)
                 .padding(.top, 5)
 
         }
+        .onAppear(perform: {
+            updateTask()
+        })
+    }
+}
+
+//FUNZIONI
+
+extension MyPlannerView{
+    func updateTask(){
+        allTasks = sharedData.GetAllTask()
     }
 }
 

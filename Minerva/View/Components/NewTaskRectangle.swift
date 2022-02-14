@@ -11,6 +11,7 @@ import SwiftUI
 struct NewTaskRectangle: View{
     
     @Binding var isActive: Bool
+    @Binding var allTasks: [TaskCD]
     
     var body: some View{
         Button(action:{
@@ -27,17 +28,7 @@ struct NewTaskRectangle: View{
             
         })
             .sheet(isPresented: $isActive){
-                NavigationView{
-                    NewTaskModal()
-                        .toolbar{
-                            ToolbarItem(placement: .principal, content: {
-                                Text("Create new task")
-                                    .font(.custom("Noteworthy-Bold", size: 25))
-                            })
-                        }
-//                        .navigationTitle("Create a new task")
-//                        .font(.custom("Noteworthy-Bold", size: 25))
-                }
+                NewTaskModal(allTasks: $allTasks)
             }
         
     }
