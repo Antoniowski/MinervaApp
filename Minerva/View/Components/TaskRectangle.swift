@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskRectangle: View {
+    @EnvironmentObject var sharedData: TaskControllerCD
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {

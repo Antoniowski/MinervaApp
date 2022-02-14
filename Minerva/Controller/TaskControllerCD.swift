@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class TaskControllerCD{
+class TaskControllerCD: ObservableObject{
     let dataContainer: NSPersistentContainer
     
     init(){
