@@ -15,7 +15,7 @@ struct MyPlannerView: View{
         ScrollView{
             DatePicker("", selection: $date, displayedComponents: [.date])
                 .datePickerStyle(.graphical)
-                .accentColor(.purple)
+                .accentColor(.orange)
             
             Text("Attività del \(date.formatted(date: .abbreviated, time: .omitted)) ")
             

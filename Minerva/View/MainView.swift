@@ -25,6 +25,7 @@ struct MainView: View {
                     Label("Stats", systemImage: "chart.line.uptrend.xyaxis")
                 }
         }
+        .preferredColorScheme(.light)
     }
 }
 

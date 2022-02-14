@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct TaskRectangle: View {    
+struct TaskRectangle: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
         HStack{
@@ -45,7 +47,7 @@ struct TaskRectangle: View {
         }
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width*0.9, height: 80)
-        .background(Color(red: 227/255, green: 224/255, blue: 249/255))
+        .background(colorScheme == .dark ? .orange : Color(red: 227/255, green: 224/255, blue: 249/255))
         .cornerRadius(15)
         .shadow(color: .gray, radius: 3, x: 2, y: 4)
     }
