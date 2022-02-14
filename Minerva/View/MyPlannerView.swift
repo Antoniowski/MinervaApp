@@ -12,7 +12,7 @@ struct MyPlannerView: View{
     @EnvironmentObject var sharedData: TaskControllerCD
     
     @State private var date = Date()
-    
+    @State private var isActive: Bool = false
     var body: some View{
         ScrollView{
             DatePicker("", selection: $date, displayedComponents: [.date])
@@ -25,6 +25,9 @@ struct MyPlannerView: View{
                 TaskRectangle()
             }
             .padding(5)
+
+            NewTaskRectangle(isActive: $isActive)
+                .padding(.top, 5)
 
         }
     }
