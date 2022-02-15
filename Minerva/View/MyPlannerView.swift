@@ -48,7 +48,7 @@ struct MyPlannerView: View{
 
 extension MyPlannerView{
     func updateTask(){
-        withAnimation(.linear(duration: 0.5)){
+        withAnimation(.linear(duration: 0.2)){
             allTasks = sharedData.GetAllTask()
         }
     }
