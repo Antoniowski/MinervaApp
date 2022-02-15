@@ -24,8 +24,16 @@ struct TaskRectangle: View {
                 if isCompleted == true{
                     Image(systemName: "checkmark")
                         .foregroundColor(Color.blue)
-                    
                 }
+                Button(action: {
+                    
+                    isCompleted.toggle()
+                    
+                    
+                }, label: {
+                    HStack{}
+                    .frame(width: UIScreen.main.bounds.width/9, height: 45)
+                })
             }
             .frame(width: UIScreen.main.bounds.width/9, height: 45)
             .background(Color.white)
