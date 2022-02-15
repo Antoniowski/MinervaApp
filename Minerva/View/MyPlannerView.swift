@@ -23,9 +23,9 @@ struct MyPlannerView: View{
             
             Text("Activities for \(date.formatted(date: .abbreviated, time: .omitted)) ")
             
-            ForEach(allTasks, id: \.self){ T in
+            ForEach(allTasks, id:\.self){T in
                 if T.date_of_activity?.formatted(date: .long, time: .omitted) == date.formatted(date: .long, time: .omitted){
-                    TaskRectangle(title: T.title ?? "", description: T.activity_description ?? "", priority: PriorityLevel(rawValue: T.priority!) ?? .low, isCompleted: T.completed, referredTask: T)
+                    TaskRectangle(title: T.title ?? "", description: T.activity_description ?? "", priority: PriorityLevel(rawValue: T.priority!) ?? .low, isCompleted: T.completed,date: T.date_of_activity ?? Date(), allTask: $allTasks, referredTask: T)
                         .onTapGesture(perform: {
                             sharedData.DeleteTask(task: T)
                             updateTask()
