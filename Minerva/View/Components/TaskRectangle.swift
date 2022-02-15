@@ -42,16 +42,34 @@ struct TaskRectangle: View {
             }
             .padding(.horizontal)
             
-            VStack{
-                Circle()
-                    .frame(width: 10, height: 10)
-                Circle()
-                    .frame(width: 10, height: 10)
-                Circle()
-                    .frame(width: 10, height: 10)
+            if priority == .low {
+                VStack{
+                    Circle()
+                        .frame(width: 10, height: 10)
+                }.frame(width: UIScreen.main.bounds.width/10, height: 40)
             }
-            .frame(width: UIScreen.main.bounds.width/10, height: 40)
             
+            else if priority == .mid {
+                VStack{
+                    Circle()
+                        .frame(width: 10, height: 10)
+                    Circle()
+                        .frame(width: 10, height: 10)
+                }
+                .frame(width: UIScreen.main.bounds.width/10, height: 40)
+            }
+            else {
+                
+                VStack{
+                    Circle()
+                        .frame(width: 10, height: 10)
+                    Circle()
+                        .frame(width: 10, height: 10)
+                    Circle()
+                        .frame(width: 10, height: 10)
+                }
+                .frame(width: UIScreen.main.bounds.width/10, height: 40)
+            }
         }
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width*0.9, height: 80)
