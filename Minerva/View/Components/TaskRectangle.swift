@@ -17,6 +17,7 @@ struct TaskRectangle: View {
     @State var isCompleted: Bool = false
     @State var date = Date()
     @State var showOptions: Bool = false
+    @State var showModal: Bool = false
     @Binding var allTask: [TaskCD]
     
     var referredTask: TaskCD
@@ -93,8 +94,9 @@ struct TaskRectangle: View {
             .foregroundColor(colorScheme == .dark ? .white : .black)
             .confirmationDialog("", isPresented: $showOptions, titleVisibility: .hidden){
                 Button("Edit"){
-                    
+                    showModal.toggle()
                 }
+                
                 Button(role: .destructive, action: {
                     sharedData.DeleteTask(task: referredTask)
                     allTask = sharedData.GetAllTask()
@@ -102,6 +104,9 @@ struct TaskRectangle: View {
                     Text("Delete")
                 })
                 
+            }
+            .sheet(isPresented: $showModal) {
+                NewTaskModal(titleField: title, descriptionField: description, priorityValue: priority, isEditing: true, dateActivity: $date, allTasks: $allTask, referredTask: referredTask)
             }
         
         

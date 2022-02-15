@@ -12,12 +12,15 @@ struct NewTaskModal: View{
     @EnvironmentObject var sharedData: TaskControllerCD
     @Environment(\.dismiss) private var dismiss
 
-    @State private var titleField: String = ""
-    @State private var descriptionField: String = ""
-    @State private var priorityValue: PriorityLevel = .low
+    @State var titleField: String = ""
+    @State var descriptionField: String = ""
+    @State var priorityValue: PriorityLevel = .low
+    @State var isEditing: Bool = false
     @Binding var dateActivity: Date
     
     @Binding var allTasks: [TaskCD]
+    var referredTask: TaskCD = TaskCD()
+    
     
     var body: some View{
         NavigationView{
@@ -77,7 +80,15 @@ struct NewTaskModal: View{
                 })
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {
+                        if isEditing == false {
                         sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
+                        }
+                        else {
+                            sharedData.UpdateTask(task: referredTask, title: titleField)
+                            sharedData.UpdateTask(task: referredTask, desc: descriptionField)
+                            sharedData.UpdateTask(task: referredTask, priority: priorityValue)
+                            
+                        }
                         allTasks = sharedData.GetAllTask()
                         dismiss()
                     }, label: {
