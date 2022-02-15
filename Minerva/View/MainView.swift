@@ -24,12 +24,11 @@ struct MainView: View {
                     Label("Stats", systemImage: "chart.line.uptrend.xyaxis")
                 }
         }
-        .preferredColorScheme(.light)
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}

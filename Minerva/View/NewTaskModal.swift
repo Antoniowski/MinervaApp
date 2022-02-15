@@ -15,6 +15,7 @@ struct NewTaskModal: View{
     @State private var titleField: String = ""
     @State private var descriptionField: String = ""
     @State private var priorityValue: PriorityLevel = .low
+    @Binding var dateActivity: Date
     
     @Binding var allTasks: [TaskCD]
     
@@ -23,13 +24,12 @@ struct NewTaskModal: View{
             VStack{
                 TextField("Title", text: $titleField)
                     .padding(.horizontal)
-                
                 Divider()
-                
                 TextField("Description", text: $descriptionField)
                     .padding(.horizontal)
                 
                 //            Divider()
+                
                 List{
                     Button(action: {
                         priorityValue = .high
@@ -40,7 +40,6 @@ struct NewTaskModal: View{
                             if priorityValue == .high{
                                 Image(systemName: "checkmark")
                             }
-                            
                         }
                     })
                     
@@ -56,6 +55,7 @@ struct NewTaskModal: View{
                             }
                         }
                     })
+                    
                     Button(action: {
                         priorityValue = .low
                     }, label: {
@@ -77,7 +77,7 @@ struct NewTaskModal: View{
                 })
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {
-                        sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue)
+                        sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
                         allTasks = sharedData.GetAllTask()
                         dismiss()
                     }, label: {

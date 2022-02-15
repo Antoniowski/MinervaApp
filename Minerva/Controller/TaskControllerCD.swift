@@ -20,11 +20,12 @@ class TaskControllerCD: ObservableObject{
         }
     }
     
-    func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false){
+    func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date){
         let task = TaskCD(context: dataContainer.viewContext)
         task.title = title
         task.activity_description = description
         task.priority = priority.rawValue
+        task.date_of_activity = date
         
         do{
             try dataContainer.viewContext.save()

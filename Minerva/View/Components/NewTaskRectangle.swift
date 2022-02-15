@@ -12,6 +12,7 @@ struct NewTaskRectangle: View{
     
     @Binding var isActive: Bool
     @Binding var allTasks: [TaskCD]
+    @Binding var date: Date
     
     var body: some View{
         Button(action:{
@@ -28,7 +29,7 @@ struct NewTaskRectangle: View{
             
         })
             .sheet(isPresented: $isActive){
-                NewTaskModal(allTasks: $allTasks)
+                NewTaskModal(dateActivity: $date, allTasks: $allTasks)
             }
         
     }
@@ -37,6 +38,6 @@ struct NewTaskRectangle: View{
 
 //struct ContentView2_Previews: PreviewProvider {
 //    static var previews: some View {
-//        NewTaskRectangle(isActive: <#Binding<Bool>#>)
+//        NewTaskRectangle(isActive:)
 //    }
 //}

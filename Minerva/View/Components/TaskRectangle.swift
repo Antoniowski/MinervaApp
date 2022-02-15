@@ -26,8 +26,6 @@ struct TaskRectangle: View {
                         .foregroundColor(Color.blue)
                     
                 }
-                
-                
             }
             .frame(width: UIScreen.main.bounds.width/9, height: 45)
             .background(Color.white)
@@ -65,8 +63,8 @@ struct TaskRectangle: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskRectangle()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TaskRectangle()
+//    }
+//}
