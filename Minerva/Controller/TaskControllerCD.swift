@@ -44,6 +44,59 @@ class TaskControllerCD: ObservableObject{
         }
     }
     
+    
+//    UPDATE FUNCTIONS
+    
+    
+    func UpdateTask(task: TaskCD, isCompleted: Bool){
+        task.completed = isCompleted
+        do{
+            try dataContainer.viewContext.save()
+        }catch{
+            dataContainer.viewContext.rollback()
+            print("Update Failed")
+        }
+    }
+    
+    func UpdateTask(task: TaskCD, title: String){
+        task.title = title
+        do{
+            try dataContainer.viewContext.save()
+        }catch{
+            dataContainer.viewContext.rollback()
+            print("Update Failed")
+        }
+    }
+    func UpdateTask(task: TaskCD, desc: String){
+        task.activity_description = desc
+        do{
+            try dataContainer.viewContext.save()
+        }catch{
+            dataContainer.viewContext.rollback()
+            print("Update Failed")
+        }
+    }
+    func UpdateTask(task: TaskCD, date: Date){
+        task.date_of_activity = date
+        do{
+            try dataContainer.viewContext.save()
+        }catch{
+            dataContainer.viewContext.rollback()
+            print("Update Failed")
+        }
+    }
+    
+    func UpdateTask(task: TaskCD, priority: PriorityLevel){
+        task.priority = priority.rawValue
+        do{
+            try dataContainer.viewContext.save()
+        }catch{
+            dataContainer.viewContext.rollback()
+            print("Update Failed")
+        }
+    }
+    
+//    GET FUNC
     func GetAllTask()->[TaskCD]{
         let fetchRequest: NSFetchRequest<TaskCD> = TaskCD.fetchRequest()
         do{

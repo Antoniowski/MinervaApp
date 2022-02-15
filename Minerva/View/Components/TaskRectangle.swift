@@ -10,11 +10,13 @@ import SwiftUI
 struct TaskRectangle: View {
     @EnvironmentObject var sharedData: TaskControllerCD
     @Environment(\.colorScheme) var colorScheme
-    
+        
     @State var title: String = ""
     @State var description: String = ""
     @State var priority: PriorityLevel = .low
     @State var isCompleted: Bool = false
+    
+    var referredTask: TaskCD
     
     var body: some View {
         
@@ -26,10 +28,8 @@ struct TaskRectangle: View {
                         .foregroundColor(Color.blue)
                 }
                 Button(action: {
-                    
                     isCompleted.toggle()
-                    
-                    
+                    sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
                 }, label: {
                     HStack{}
                     .frame(width: UIScreen.main.bounds.width/9, height: 45)
