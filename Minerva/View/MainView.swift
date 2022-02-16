@@ -11,7 +11,7 @@ struct MainView: View {
     @EnvironmentObject var sharedData: TaskControllerCD
     var body: some View {
         TabView{
-            MyPlannerView()
+            myPlannerNavView
                 .tabItem{
                     Label("Planner", systemImage: "square.and.pencil")
                 }
