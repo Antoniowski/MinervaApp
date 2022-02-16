@@ -25,15 +25,13 @@ struct OnboardingView: View {
                 Button{
                     print ("Hai selezionato Italiano")
                 } label: {
-                    Text ("🇮🇹")
-                        .font(.system(size: 80))
+                    LanguageSelector(language: "flagItaly")
                 }
                 
                 Button{
                     print ("You selected English")
                 } label: {
-                    Text ("🇬🇧")
-                        .font(.system(size: 80))
+                    LanguageSelector(language: "flagUK")
                 }
             }
             
