@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var sharedData: TaskControllerCD
+    @State var newUser: Bool = true
     var body: some View {
         TabView{
             myPlannerNavView
@@ -23,6 +24,9 @@ struct MainView: View {
                 .tabItem{
                     Label("Stats", systemImage: "chart.line.uptrend.xyaxis")
                 }
+        }
+        .sheet(isPresented: $newUser) {
+            OnboardingView()
         }
     }
 }
