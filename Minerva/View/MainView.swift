@@ -15,11 +15,11 @@ struct MainView: View {
                 .tabItem{
                     Label("Planner", systemImage: "square.and.pencil")
                 }
-            Text("Group")
+            teamNavView
                 .tabItem{
                     Label("Group", systemImage: "person.3.fill")
                 }
-            Text("Stats")
+            statsNavView
                 .tabItem{
                     Label("Stats", systemImage: "chart.line.uptrend.xyaxis")
                 }
