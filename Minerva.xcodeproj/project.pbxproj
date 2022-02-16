@@ -12,6 +12,7 @@
 		632B7ECD27BD3A500029DD0A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B7ECC27BD3A500029DD0A /* StatsView.swift */; };
 		632B7ECF27BD3AC50029DD0A /* NavViewTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B7ECE27BD3AC50029DD0A /* NavViewTeam.swift */; };
 		632B7ED127BD3AD40029DD0A /* NavViewStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B7ED027BD3AD40029DD0A /* NavViewStats.swift */; };
+		632B7ED327BD3D020029DD0A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632B7ED227BD3D020029DD0A /* OnboardingView.swift */; };
 		6335CAF927BA9F3600F03957 /* NewTaskRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335CAF827BA9F3600F03957 /* NewTaskRectangle.swift */; };
 		6335CAFD27BAA85E00F03957 /* NewTaskModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */; };
 		6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */; };
@@ -51,6 +52,7 @@
 		632B7ECC27BD3A500029DD0A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		632B7ECE27BD3AC50029DD0A /* NavViewTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewTeam.swift; sourceTree = "<group>"; };
 		632B7ED027BD3AD40029DD0A /* NavViewStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewStats.swift; sourceTree = "<group>"; };
+		632B7ED227BD3D020029DD0A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		6335CAF827BA9F3600F03957 /* NewTaskRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskRectangle.swift; sourceTree = "<group>"; };
 		6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModal.swift; sourceTree = "<group>"; };
 		6ACDFAC427B69AA5008EF188 /* Minerva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minerva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				6ACDFAC927B69AA5008EF188 /* MainView.swift */,
+				632B7ED227BD3D020029DD0A /* OnboardingView.swift */,
 				632B7EC827BD34480029DD0A /* NavViewMyPlanner.swift */,
 				6ACDFAF527B6A2AD008EF188 /* MyPlannerView.swift */,
 				6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */,
@@ -328,6 +331,7 @@
 				632B7ECB27BD3A420029DD0A /* TeamView.swift in Sources */,
 				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
 				6ACDFAF627B6A2AD008EF188 /* MyPlannerView.swift in Sources */,
+				632B7ED327BD3D020029DD0A /* OnboardingView.swift in Sources */,
 				632B7ECF27BD3AC50029DD0A /* NavViewTeam.swift in Sources */,
 				6335CAFD27BAA85E00F03957 /* NewTaskModal.swift in Sources */,
 				632B7EC927BD34480029DD0A /* NavViewMyPlanner.swift in Sources */,
