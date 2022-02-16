@@ -11,7 +11,7 @@ import SwiftUI
 struct NewTaskModal: View{
     @EnvironmentObject var sharedData: TaskControllerCD
     @Environment(\.dismiss) private var dismiss
-
+    
     @State var titleField: String = ""
     @State var descriptionField: String = ""
     @State var priorityValue: PriorityLevel = .low

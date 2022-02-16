@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct OnboardingView: View {
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         VStack{
             Image(systemName: "moon.stars.fill")
@@ -37,7 +38,7 @@ struct OnboardingView: View {
             }
             
             Button("Continue"){
-                print("Un pollo")
+                dismiss()
             }
             .foregroundColor(.white)
             .frame(width: UIScreen.main.bounds.width*0.5, height: 60)
