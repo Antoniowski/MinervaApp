@@ -19,7 +19,7 @@ struct NewTaskRectangle: View{
             isActive.toggle()
         }, label: {
             HStack{
-                Text ("Add Task")
+                Label("", systemImage: "plus")
                     .foregroundColor(.blue)
             }
             .frame(width: UIScreen.main.bounds.width*0.9, height: 80)

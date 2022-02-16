@@ -75,19 +75,23 @@ struct NewTaskModal: View{
             }
             .toolbar{
                 ToolbarItem(placement: .principal, content: {
-                    Text("Create new task")
-                        .font(.custom("Noteworthy-Bold", size: 25))
+                    if isEditing == false{
+                        Text("Create new task")
+                            .font(.custom("Noteworthy-Bold", size: 25))
+                    }else{
+                        Text("Edit task")
+                            .font(.custom("Noteworthy-Bold", size: 25))
+                    }
                 })
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {
                         if isEditing == false {
-                        sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
+                            sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
                         }
                         else {
                             sharedData.UpdateTask(task: referredTask, title: titleField)
                             sharedData.UpdateTask(task: referredTask, desc: descriptionField)
                             sharedData.UpdateTask(task: referredTask, priority: priorityValue)
-                            
                         }
                         allTasks = sharedData.GetAllTask()
                         dismiss()
