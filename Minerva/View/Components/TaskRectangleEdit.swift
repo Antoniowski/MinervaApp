@@ -102,7 +102,7 @@ struct TaskRectangleEdit: View {
                 ShakingAnimation(WithThisAngle: 2)
             })
             .confirmationDialog("", isPresented: $showOptions, titleVisibility: .hidden){
-                Button("Check"){
+                Button(isCompleted ? "Uncheck" : "Check"){
                     isCompleted.toggle()
                     sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
                     allTask = sharedData.GetAllTaskOrdered()
