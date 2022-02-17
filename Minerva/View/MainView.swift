@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var sharedData: TaskControllerCD
     @State var newUser: Bool = true
+    @State var editStatus: Bool = false
     var body: some View {
         TabView{
             myPlannerNavView

@@ -1,13 +1,14 @@
 //
-//  TaskRectangle.swift
+//  TaskRectangleEdit.swift
 //  Minerva
 //
-//  Created by Antonio Romano on 11/02/22.
+//  Created by Antonio Romano on 17/02/22.
 //
 
+import Foundation
 import SwiftUI
 
-struct TaskRectangle: View {
+struct TaskRectangleEdit: View {
     @EnvironmentObject var sharedData: TaskControllerCD
     @Environment(\.colorScheme) var colorScheme
         
@@ -18,11 +19,18 @@ struct TaskRectangle: View {
     @State var date = Date()
     @State var showOptions: Bool = false
     @State var showModal: Bool = false
+    
     @Binding var allTask: [TaskCD]
     
     var referredTask: TaskCD
     
+    @State private var timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    @State private var rotazione: Double = 0
+    
     var body: some View {
+        Button(action:{
+            showOptions = true
+        }, label: {
             HStack{
                 
                 ZStack{
@@ -87,13 +95,51 @@ struct TaskRectangle: View {
             .background(colorScheme == .dark ? Color( red: 69/255, green: 74/255, blue: 114/255, opacity: 1) : Color(red: 227/255, green: 224/255, blue: 249/255))
             .cornerRadius(15)
             .shadow(color: .black .opacity(0.5), radius: 3, x: 2, y: 4)
+        })
+            .foregroundColor(colorScheme == .dark ? .white : .black)
+            .rotationEffect(.degrees(rotazione))
+            .onReceive(timer, perform: {_ in
+                ShakingAnimation(WithThisAngle: 2)
+            })
+            .confirmationDialog("", isPresented: $showOptions, titleVisibility: .hidden){
+                Button("Check"){
+                    isCompleted.toggle()
+                    sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
+                    allTask = sharedData.GetAllTaskOrdered()
+                }
+                
+                Button("Edit"){
+                    showModal.toggle()
+                }
+                
+                Button(role: .destructive, action: {
+                    sharedData.DeleteTask(task: referredTask)
+                    withAnimation(.linear(duration: 0.2)){
+                        allTask = sharedData.GetAllTaskOrdered()
+                    }
+                }, label: {
+                    Text("Delete")
+                })
+                
+            }
+            .sheet(isPresented: $showModal) {
+                NewTaskModal(titleField: title, descriptionField: description, priorityValue: priority, isEditing: true, dateActivity: $date, allTasks: $allTask, referredTask: referredTask)
+            }
+        
+        
+        
+    }
+    
+    private func ShakingAnimation(WithThisAngle valore: Double){
+        withAnimation(){
+            if self.rotazione == 0{
+                self.rotazione += valore
+            }else if rotazione == valore{
+                self.rotazione -= valore*2
+            }else{
+                self.rotazione += valore*2
+            }
+        }
     }
     
 }
-
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TaskRectangle()
-//    }
-//}
