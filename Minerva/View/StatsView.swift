@@ -10,6 +10,6 @@ import SwiftUI
 
 struct StatsView: View {
     var body: some View{
-        Text("Statistics Section Coming Soon")
+        Text("Stats Section Coming Soon")
     }
 }
