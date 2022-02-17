@@ -6,9 +6,9 @@
 //
 
 enum PriorityLevel: String{
-    case low
-    case mid
-    case high
+    case low = "a"
+    case mid = "b"
+    case high = "c"
 }
 
 struct TaskModel{

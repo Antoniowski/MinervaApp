@@ -100,7 +100,7 @@ struct TaskRectangle: View {
                 Button(role: .destructive, action: {
                     sharedData.DeleteTask(task: referredTask)
                     withAnimation(.linear(duration: 0.2)){
-                        allTask = sharedData.GetAllTask()
+                        allTask = sharedData.UpdateTaskList()
                     }
                 }, label: {
                     Text("Delete")

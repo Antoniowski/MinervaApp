@@ -36,7 +36,7 @@ struct MyPlannerView: View{
             
         }
         .onAppear(perform: {
-            updateTask()
+            allTasks = sharedData.UpdateTaskList()
         })
     }
 }
@@ -44,11 +44,11 @@ struct MyPlannerView: View{
 //FUNZIONI
 
 extension MyPlannerView{
-    func updateTask(){
-        withAnimation(.linear(duration: 0.2)){
-            allTasks = sharedData.GetAllTask()
-        }
-    }
+//    func updateTask(){
+//        withAnimation(.linear(duration: 0.2)){
+//            allTasks = sharedData.GetAllTask()
+//        }
+//    }
 }
 
 

@@ -105,4 +105,25 @@ class TaskControllerCD: ObservableObject{
             return[]
         }
     }
+    
+    func UpdateTaskList()->[TaskCD]{
+        let array = GetAllTask()
+        var arrayLow: [TaskCD] = []
+        var arrayMid: [TaskCD] = []
+        var arrayHigh: [TaskCD] = []
+        
+        if array.isEmpty{
+            return []
+        }else{
+        for T in array{
+            switch(T.priority){
+            case "a": arrayLow.append(T)
+            case "b": arrayMid.append(T)
+            case "c": arrayHigh.append(T)
+            default: print("ciao")
+            }
+        }
+        return arrayHigh+arrayMid+arrayLow
+        }
+    }
 }
