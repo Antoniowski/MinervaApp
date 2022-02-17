@@ -19,7 +19,7 @@ class TaskControllerCD: ObservableObject{
             }
         }
     }
-    
+    //ADD FUNC
     func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date){
         let task = TaskCD(context: dataContainer.viewContext)
         task.title = title
@@ -34,6 +34,24 @@ class TaskControllerCD: ObservableObject{
         }
     }
     
+    func AddStatusBool(){
+        let statusBool = AppStatusInfo(context: dataContainer.viewContext)
+        
+    newUserControll:
+        if GetAppInfo().isEmpty == false{
+            break newUserControll
+        }else{
+            statusBool.newUser = true
+            
+            do{
+                try dataContainer.viewContext.save()
+            }catch{
+                print("Add Status Bool Failed")
+            }
+            
+        }
+    }
+    
     func DeleteTask(task: TaskCD){
         dataContainer.viewContext.delete(task)
         do{
@@ -45,7 +63,7 @@ class TaskControllerCD: ObservableObject{
     }
     
     
-//    UPDATE FUNCTIONS
+    //    UPDATE FUNCTIONS
     
     
     func UpdateTask(task: TaskCD, isCompleted: Bool){
@@ -96,7 +114,11 @@ class TaskControllerCD: ObservableObject{
         }
     }
     
-//    GET FUNC
+    func SetFalseNewUser(user: AppStatusInfo){
+        user.newUser = false
+    }
+    
+    //    GET FUNC
     func GetAllTask()->[TaskCD]{
         let fetchRequest: NSFetchRequest<TaskCD> = TaskCD.fetchRequest()
         do{
@@ -115,15 +137,36 @@ class TaskControllerCD: ObservableObject{
         if array.isEmpty{
             return []
         }else{
-        for T in array{
-            switch(T.priority){
-            case "a": arrayLow.append(T)
-            case "b": arrayMid.append(T)
-            case "c": arrayHigh.append(T)
-            default: print("ciao")
+            for T in array{
+                switch(T.priority){
+                case "a": arrayLow.append(T)
+                case "b": arrayMid.append(T)
+                case "c": arrayHigh.append(T)
+                default: print("ciao")
+                }
             }
+            return arrayHigh+arrayMid+arrayLow
         }
-        return arrayHigh+arrayMid+arrayLow
+    }
+    
+    //recupera il vettore dei bool
+    func GetAppInfo()->[AppStatusInfo]{
+        let fetchRequest: NSFetchRequest<AppStatusInfo> = AppStatusInfo.fetchRequest()
+        do{
+            return try dataContainer.viewContext.fetch(fetchRequest)
+        }catch{
+            return []
+        }
+    }
+    
+    func GetNewUserStatus()->Bool{
+        let fetchRequest: NSFetchRequest<AppStatusInfo> = AppStatusInfo.fetchRequest()
+        do{
+            return try dataContainer.viewContext.fetch(fetchRequest)[0].newUser
+        }catch{
+            print("FAILED FETCH")
+            return false
         }
     }
 }
+

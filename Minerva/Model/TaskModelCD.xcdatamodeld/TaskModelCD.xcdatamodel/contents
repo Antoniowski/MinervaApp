@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppStatusInfo" representedClassName="AppStatusInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="newUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="TaskCD" representedClassName="TaskCD" syncable="YES" codeGenerationType="class">
         <attribute name="activity_description" optional="YES" attributeType="String"/>
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -9,5 +12,6 @@
     </entity>
     <elements>
         <element name="TaskCD" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="AppStatusInfo" positionX="-45" positionY="36" width="128" height="44"/>
     </elements>
 </model>
