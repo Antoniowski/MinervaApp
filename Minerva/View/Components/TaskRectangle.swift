@@ -93,6 +93,12 @@ struct TaskRectangle: View {
         })
             .foregroundColor(colorScheme == .dark ? .white : .black)
             .confirmationDialog("", isPresented: $showOptions, titleVisibility: .hidden){
+                Button("Check"){
+                    isCompleted.toggle()
+                    sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
+                    allTask = sharedData.GetAllTaskOrdered()
+                }
+                
                 Button("Edit"){
                     showModal.toggle()
                 }
