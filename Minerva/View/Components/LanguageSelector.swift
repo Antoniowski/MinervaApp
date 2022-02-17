@@ -9,21 +9,22 @@ import Foundation
 import SwiftUI
 
 struct LanguageSelector: View{
+    @Binding var isSelected: Bool
     var language: String
     var body: some View{
-        HStack{
+        ZStack{
             Image(language)
                 .resizable()
+                .frame(width: UIScreen.main.bounds.height*0.08, height: UIScreen.main.bounds.height*0.08)
+                .clipped()
+                .clipShape(Circle())
                 .scaledToFit()
+            if isSelected{
+                Circle()
+                    .stroke(.blue, lineWidth: 4)
+                    .frame(width: UIScreen.main.bounds.height*0.09, height: UIScreen.main.bounds.height*0.09)
+            }
         }
-        .frame(width: UIScreen.main.bounds.height*0.08, height: UIScreen.main.bounds.height*0.08)
-        .clipped()
-        .clipShape(Circle())
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        LanguageSelector(language: "flagItaly")
+        
     }
 }

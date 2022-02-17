@@ -11,9 +11,12 @@ import SwiftUI
 struct OnboardingView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) private var dismiss
+    
+    @State private var italySelected: Bool = false
+    @State private var englishSelected: Bool = false
+    
     var body: some View {
         ZStack{
-            
             Image(colorScheme == .light ? "Pencils" : "DarkPencils")
                 .offset(x:UIScreen.main.bounds.width/2.25, y:UIScreen.main.bounds.width/3.3)
             VStack{
@@ -66,15 +69,19 @@ struct OnboardingView: View {
                     .padding(.top, 30)
                 HStack{
                     Button{
+                        italySelected = true
+                        englishSelected = false
                         print ("Hai selezionato Italiano")
                     } label: {
-                        LanguageSelector(language: "flagItaly")
+                        LanguageSelector(isSelected: $italySelected, language: "flagItaly")
                     }
                     
                     Button{
+                        englishSelected = true
+                        italySelected = false
                         print ("You selected English")
                     } label: {
-                        LanguageSelector(language: "flagUK")
+                        LanguageSelector(isSelected: $englishSelected, language: "flagUK")
                     }
                 }
                 
