@@ -93,7 +93,7 @@ struct NewTaskModal: View{
                             sharedData.UpdateTask(task: referredTask, desc: descriptionField)
                             sharedData.UpdateTask(task: referredTask, priority: priorityValue)
                         }
-                        allTasks = sharedData.UpdateTaskList()
+                        allTasks = sharedData.GetAllTaskOrdered()
                         dismiss()
                     }, label: {
                         Text("Save")

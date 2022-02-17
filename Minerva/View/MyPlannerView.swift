@@ -36,7 +36,7 @@ struct MyPlannerView: View{
             
         }
         .onAppear(perform: {
-            allTasks = sharedData.UpdateTaskList()
+            allTasks = sharedData.GetAllTaskOrdered()
         })
     }
 }

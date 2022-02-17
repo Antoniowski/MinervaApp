@@ -106,7 +106,7 @@ class TaskControllerCD: ObservableObject{
         }
     }
     
-    func UpdateTaskList()->[TaskCD]{
+    func GetAllTaskOrdered()->[TaskCD]{
         let array = GetAllTask()
         var arrayLow: [TaskCD] = []
         var arrayMid: [TaskCD] = []
