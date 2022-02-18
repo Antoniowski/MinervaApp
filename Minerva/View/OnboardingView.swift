@@ -16,14 +16,18 @@ struct OnboardingView: View {
     @State private var englishSelected: Bool = false
     
     var body: some View {
+        
         ZStack{
             Image(colorScheme == .light ? "Pencils" : "DarkPencils")
+                
                 .offset(x:UIScreen.main.bounds.width/2.25, y:UIScreen.main.bounds.width/3.3)
+                
             VStack{
                 Image("BlockNote")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width*0.25, height: UIScreen.main.bounds.width*0.25)
                     .scaledToFit()
+                    .padding(.top, 30)
                 
                 
                 Text("Welcome to Minerva")
@@ -36,8 +40,8 @@ struct OnboardingView: View {
                         .font(.system(size: 20))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Here goes the content")
-                        .font(.system(size: 15))
+                    Text("Ctreate and organize daily tasks on your calendar, check your assignments when completed, edit or delete them and enjoy your study session.")
+                        .font(.system(size: 14).weight(.light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                         .padding(.bottom)
@@ -46,8 +50,8 @@ struct OnboardingView: View {
                         .font(.system(size: 20))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Here goes the content")
-                        .font(.system(size: 15))
+                    Text("Join a team, organize a planner with other students and start your group studying session, sharing documents and common tasks.")
+                        .font(.system(size: 14).weight(.light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                         .padding(.bottom)
@@ -56,17 +60,17 @@ struct OnboardingView: View {
                         .font(.system(size: 20))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Here goes the content")
-                        .font(.system(size: 15))
+                    Text("Keep track of your weekly achievements and productivity, complete tasks and other functions to earn badges.")
+                        .font(.system(size: 14).weight(.light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .frame(width: UIScreen.main.bounds.width*0.65, height: UIScreen.main.bounds.width*0.4, alignment: .leading)
+                .frame(width: UIScreen.main.bounds.width*0.65, height: UIScreen.main.bounds.width*0.8, alignment: .leading)
                 
                 
                 
                 Text("Please select preferred language:")
                     .frame(height: 20)
-                    .padding(.vertical, 30)
+                    .padding(.vertical, 15)
                 
                 HStack(alignment: .top , spacing: UIScreen.main.bounds.width/12){
                     Button{
@@ -96,6 +100,7 @@ struct OnboardingView: View {
                 .frame(width: UIScreen.main.bounds.width*0.9, height: 45)
                 .background(.blue.opacity(1))
                 .cornerRadius(15)
+                .padding(.bottom)
                 //            .shadow(color: .black .opacity(0.5), radius: 3, x: 2, y: 4)
             }
         }
