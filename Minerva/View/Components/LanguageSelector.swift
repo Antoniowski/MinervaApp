@@ -23,6 +23,10 @@ struct LanguageSelector: View{
                 Circle()
                     .stroke(.blue, lineWidth: 4)
                     .frame(width: UIScreen.main.bounds.height*0.09, height: UIScreen.main.bounds.height*0.09)
+            }else{
+                Circle()
+                    .stroke(.clear, lineWidth: 4)
+                    .frame(width: UIScreen.main.bounds.height*0.09, height: UIScreen.main.bounds.height*0.09)
             }
         }
         

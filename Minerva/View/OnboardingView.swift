@@ -66,8 +66,9 @@ struct OnboardingView: View {
                 
                 Text("Please select preferred language:")
                     .frame(height: 20)
-                    .padding(.top, 30)
-                HStack{
+                    .padding(.vertical, 30)
+                
+                HStack(alignment: .top , spacing: UIScreen.main.bounds.width/12){
                     Button{
                         italySelected = true
                         englishSelected = false
@@ -84,15 +85,17 @@ struct OnboardingView: View {
                         LanguageSelector(isSelected: $englishSelected, language: "flagUK")
                     }
                 }
-                
+                HStack{}.frame(minHeight: 0, maxHeight: .infinity)
+
                 Button("Continue"){
+                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                    impactMed.impactOccurred()
                     dismiss()
                 }
                 .foregroundColor(.white)
                 .frame(width: UIScreen.main.bounds.width*0.9, height: 45)
                 .background(.blue.opacity(1))
                 .cornerRadius(15)
-                .padding(.top, 100)
                 //            .shadow(color: .black .opacity(0.5), radius: 3, x: 2, y: 4)
             }
         }
