@@ -18,10 +18,14 @@ struct OnboardingView: View {
     var body: some View {
         
         ZStack{
-            Image(colorScheme == .light ? "Pencils" : "DarkPencils")
+            Image("Pencils")
                 
-                .offset(x:UIScreen.main.bounds.width/2.25, y:UIScreen.main.bounds.width/3.3)
-                
+//                .offset(x:UIScreen.main.bounds.width/2.25, y:UIScreen.main.bounds.width/3.3)
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width/1.8, height: UIScreen.main.bounds.height/1.8)
+                .offset(x: UIScreen.main.bounds.width/4.5, y: UIScreen.main.bounds.width/3.9)
+                .opacity(0.8)
+//
             VStack{
                 Image("BlockNote")
                     .resizable()
