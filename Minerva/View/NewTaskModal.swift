@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NewTaskModal: View{
-    @EnvironmentObject var sharedData: TaskControllerCD
+    @EnvironmentObject var sharedData: TaskStore
     @Environment(\.dismiss) private var dismiss
     
     @State var titleField: String = ""
@@ -18,7 +18,6 @@ struct NewTaskModal: View{
     @State var isEditing: Bool = false
     @Binding var dateActivity: Date
     
-    @Binding var allTasks: [TaskCD]
     var referredTask: TaskCD = TaskCD()
     
     
@@ -93,7 +92,7 @@ struct NewTaskModal: View{
                             sharedData.UpdateTask(task: referredTask, desc: descriptionField)
                             sharedData.UpdateTask(task: referredTask, priority: priorityValue)
                         }
-                        allTasks = sharedData.GetAllTaskOrdered()
+                        sharedData.FetchOrdered()
                         dismiss()
                     }, label: {
                         Text("Save")

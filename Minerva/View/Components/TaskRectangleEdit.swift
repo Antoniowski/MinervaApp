@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TaskRectangleEdit: View {
-    @EnvironmentObject var sharedData: TaskControllerCD
+    @EnvironmentObject var sharedData: TaskStore
     @Environment(\.colorScheme) var colorScheme
         
     @State var title: String = ""
@@ -19,9 +19,7 @@ struct TaskRectangleEdit: View {
     @State var date = Date()
     @State var showOptions: Bool = false
     @State var showModal: Bool = false
-    
-    @Binding var allTask: [TaskCD]
-    
+
     var referredTask: TaskCD
     
     @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
@@ -105,7 +103,9 @@ struct TaskRectangleEdit: View {
                 Button(isCompleted ? "Uncheck" : "Check"){
                     isCompleted.toggle()
                     sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
-                    allTask = sharedData.GetAllTaskOrdered()
+                    withAnimation(.linear(duration: 0.2)){
+                        sharedData.FetchOrdered()
+                    }
                 }
                 
                 Button("Edit"){
@@ -115,7 +115,7 @@ struct TaskRectangleEdit: View {
                 Button(role: .destructive, action: {
                     sharedData.DeleteTask(task: referredTask)
                     withAnimation(.linear(duration: 0.2)){
-                        allTask = sharedData.GetAllTaskOrdered()
+                        sharedData.FetchOrdered()
                     }
                 }, label: {
                     Text("Delete")
@@ -123,7 +123,7 @@ struct TaskRectangleEdit: View {
                 
             }
             .sheet(isPresented: $showModal) {
-                NewTaskModal(titleField: title, descriptionField: description, priorityValue: priority, isEditing: true, dateActivity: $date, allTasks: $allTask, referredTask: referredTask)
+                NewTaskModal(titleField: title, descriptionField: description, priorityValue: priority, isEditing: true, dateActivity: $date, referredTask: referredTask)
             }
         
         

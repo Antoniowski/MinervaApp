@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct MinervaApp: App {
-    let dataController = TaskControllerCD()
+    @StateObject var sharedData = TaskStore()
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(dataController)
+                .environmentObject(sharedData)
         }
     }
 }

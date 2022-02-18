@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskRectangle: View {
-    @EnvironmentObject var sharedData: TaskControllerCD
+    @EnvironmentObject var sharedData: TaskStore
     @Environment(\.colorScheme) var colorScheme
     
     @State var title: String = ""
@@ -18,7 +18,6 @@ struct TaskRectangle: View {
     @State var date = Date()
     @State var showOptions: Bool = false
     @State var showModal: Bool = false
-    @Binding var allTask: [TaskCD]
     
     var referredTask: TaskCD
     

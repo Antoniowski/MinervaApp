@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 struct NewTaskRectangle: View{
+    @EnvironmentObject var sharedData: TaskStore
     
     @Binding var isActive: Bool
-    @Binding var allTasks: [TaskCD]
     @Binding var date: Date
     
     var body: some View{
@@ -29,7 +29,7 @@ struct NewTaskRectangle: View{
             
         })
             .sheet(isPresented: $isActive){
-                NewTaskModal(dateActivity: $date, allTasks: $allTasks)
+                NewTaskModal(dateActivity: $date)
             }
         
     }

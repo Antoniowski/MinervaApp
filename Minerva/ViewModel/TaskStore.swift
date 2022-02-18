@@ -1,41 +1,45 @@
 //
-//  TaskControllerCD.swift
+//  TaskStore.swift
 //  Minerva
 //
-//  Created by Antonio Romano on 11/02/22.
+//  Created by Antonio Romano on 18/02/22.
 //
 
 import Foundation
 import CoreData
 
-class TaskControllerCD: ObservableObject{
-    let dataContainer: NSPersistentContainer
-    
+class TaskStore: ObservableObject{
+    @Published var tasks: [TaskCD] = []
+    @Published var orderedTask: [TaskCD] = []
     init(){
-        dataContainer = NSPersistentContainer(name: "TaskModelCD")
-        dataContainer.loadPersistentStores{(description, error) in
-            if let error = error {
-                fatalError("CORE DATA ERROR: \(error)")
-            }
+        FetchTasks()
+    }
+    
+    func FetchTasks(){
+        let request = NSFetchRequest<TaskCD>(entityName: "TaskCD")
+        do{
+            tasks = try TaskControllerCD.shared.dataContainer.viewContext.fetch(request)
+        }catch{
+            print("ERROR IN FETCHING error \(error)")
         }
     }
     //ADD FUNC
     func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date){
-        let task = TaskCD(context: dataContainer.viewContext)
+        let task = TaskCD(context: TaskControllerCD.shared.dataContainer.viewContext)
         task.title = title
         task.activity_description = description
         task.priority = priority.rawValue
         task.date_of_activity = date
         
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
             print("Failed save")
         }
     }
     
     func AddStatusBool(){
-        let statusBool = AppStatusInfo(context: dataContainer.viewContext)
+        let statusBool = AppStatusInfo(context: TaskControllerCD.shared.dataContainer.viewContext)
         
     newUserControll:
         if GetAppInfo().isEmpty == false{
@@ -44,7 +48,7 @@ class TaskControllerCD: ObservableObject{
             statusBool.newUser = true
             
             do{
-                try dataContainer.viewContext.save()
+                try TaskControllerCD.shared.dataContainer.viewContext.save()
             }catch{
                 print("Add Status Bool Failed")
             }
@@ -53,11 +57,11 @@ class TaskControllerCD: ObservableObject{
     }
     
     func DeleteTask(task: TaskCD){
-        dataContainer.viewContext.delete(task)
+        TaskControllerCD.shared.dataContainer.viewContext.delete(task)
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
-            dataContainer.viewContext.rollback()
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Delete Failed")
         }
     }
@@ -69,9 +73,9 @@ class TaskControllerCD: ObservableObject{
     func UpdateTask(task: TaskCD, isCompleted: Bool){
         task.completed = isCompleted
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
-            dataContainer.viewContext.rollback()
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
         }
     }
@@ -79,27 +83,27 @@ class TaskControllerCD: ObservableObject{
     func UpdateTask(task: TaskCD, title: String){
         task.title = title
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
-            dataContainer.viewContext.rollback()
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
         }
     }
     func UpdateTask(task: TaskCD, desc: String){
         task.activity_description = desc
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
-            dataContainer.viewContext.rollback()
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
         }
     }
     func UpdateTask(task: TaskCD, date: Date){
         task.date_of_activity = date
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
-            dataContainer.viewContext.rollback()
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
         }
     }
@@ -107,9 +111,9 @@ class TaskControllerCD: ObservableObject{
     func UpdateTask(task: TaskCD, priority: PriorityLevel){
         task.priority = priority.rawValue
         do{
-            try dataContainer.viewContext.save()
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
         }catch{
-            dataContainer.viewContext.rollback()
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
         }
     }
@@ -122,20 +126,21 @@ class TaskControllerCD: ObservableObject{
     func GetAllTask()->[TaskCD]{
         let fetchRequest: NSFetchRequest<TaskCD> = TaskCD.fetchRequest()
         do{
-            return try dataContainer.viewContext.fetch(fetchRequest)
+            return try TaskControllerCD.shared.dataContainer.viewContext.fetch(fetchRequest)
         }catch{
             return[]
         }
     }
     
-    func GetAllTaskOrdered()->[TaskCD]{
+    func FetchOrdered(){
         let array = GetAllTask()
         var arrayLow: [TaskCD] = []
         var arrayMid: [TaskCD] = []
         var arrayHigh: [TaskCD] = []
         
         if array.isEmpty{
-            return []
+            orderedTask = []
+            print("No Items")
         }else{
             for T in array{
                 switch(T.priority){
@@ -145,7 +150,7 @@ class TaskControllerCD: ObservableObject{
                 default: print("ciao")
                 }
             }
-            return arrayHigh+arrayMid+arrayLow
+            orderedTask =  arrayHigh+arrayMid+arrayLow
         }
     }
     
@@ -153,7 +158,7 @@ class TaskControllerCD: ObservableObject{
     func GetAppInfo()->[AppStatusInfo]{
         let fetchRequest: NSFetchRequest<AppStatusInfo> = AppStatusInfo.fetchRequest()
         do{
-            return try dataContainer.viewContext.fetch(fetchRequest)
+            return try TaskControllerCD.shared.dataContainer.viewContext.fetch(fetchRequest)
         }catch{
             return []
         }
@@ -162,7 +167,7 @@ class TaskControllerCD: ObservableObject{
     func GetNewUserStatus()->Bool{
         let fetchRequest: NSFetchRequest<AppStatusInfo> = AppStatusInfo.fetchRequest()
         do{
-            return try dataContainer.viewContext.fetch(fetchRequest)[0].newUser
+            return try TaskControllerCD.shared.dataContainer.viewContext.fetch(fetchRequest)[0].newUser
         }catch{
             print("FAILED FETCH")
             return false
