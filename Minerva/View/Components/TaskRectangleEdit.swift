@@ -24,7 +24,7 @@ struct TaskRectangleEdit: View {
     
     var referredTask: TaskCD
     
-    @State private var timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State private var rotazione: Double = 0
     
     var body: some View {
@@ -99,7 +99,7 @@ struct TaskRectangleEdit: View {
             .foregroundColor(colorScheme == .dark ? .white : .black)
             .rotationEffect(.degrees(rotazione))
             .onReceive(timer, perform: {_ in
-                ShakingAnimation(WithThisAngle: 2)
+                ShakingAnimation(WithThisAngle: 4)
             })
             .confirmationDialog("", isPresented: $showOptions, titleVisibility: .hidden){
                 Button(isCompleted ? "Uncheck" : "Check"){
