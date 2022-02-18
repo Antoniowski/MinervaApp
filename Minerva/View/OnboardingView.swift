@@ -44,7 +44,7 @@ struct OnboardingView: View {
                         .font(.system(size: 20))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Ctreate and organize daily tasks on your calendar, check your assignments when completed, edit or delete them and enjoy your study session.")
+                    Text("Create and organize daily tasks on your calendar, check your assignments when completed, edit or delete them and enjoy your study session.")
                         .font(.system(size: 14).weight(.light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     

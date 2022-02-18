@@ -123,7 +123,7 @@ class TaskStore: ObservableObject{
     }
     
     //    GET FUNC
-    func GetAllTask()->[TaskCD]{
+    func GetAllTaskArray()->[TaskCD]{
         let fetchRequest: NSFetchRequest<TaskCD> = TaskCD.fetchRequest()
         do{
             return try TaskControllerCD.shared.dataContainer.viewContext.fetch(fetchRequest)
@@ -133,7 +133,7 @@ class TaskStore: ObservableObject{
     }
     
     func FetchOrdered(){
-        let array = GetAllTask()
+        let array = GetAllTaskArray()
         var arrayLow: [TaskCD] = []
         var arrayMid: [TaskCD] = []
         var arrayHigh: [TaskCD] = []
@@ -150,7 +150,7 @@ class TaskStore: ObservableObject{
                 default: print("ciao")
                 }
             }
-            orderedTask =  arrayHigh+arrayMid+arrayLow
+            orderedTask = arrayHigh+arrayMid+arrayLow
         }
     }
     
