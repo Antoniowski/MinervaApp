@@ -24,11 +24,12 @@ class TaskStore: ObservableObject{
         }
     }
     //ADD FUNC
-    func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date){
+    func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date = Date()){
         let task = TaskCD(context: TaskControllerCD.shared.dataContainer.viewContext)
         task.title = title
         task.activity_description = description
         task.priority = priority.rawValue
+        task.completed = completed
         task.date_of_activity = date
         
         do{
@@ -69,6 +70,23 @@ class TaskStore: ObservableObject{
     
     //    UPDATE FUNCTIONS
     
+    func UpdateTask2(task: TaskCD, title: String, desc: String, priority: PriorityLevel){
+        let taskAppoggio = task
+        DeleteTask(task: task)
+        AddTask(title: title, description: desc, priority: priority, completed: taskAppoggio.completed, date: taskAppoggio.date_of_activity ?? Date())
+    }
+    
+//    func UpdateTask(task: TaskCD, title: String, desc: String, priority: PriorityLevel){
+//        task.title = title
+//        task.activity_description = desc
+//        task.priority = priority.rawValue
+//        do{
+//            try TaskControllerCD.shared.dataContainer.viewContext.save()
+//        }catch{
+//            TaskControllerCD.shared.dataContainer.viewContext.rollback()
+//            print("Update Failed")
+//        }
+//    }
     
     func UpdateTask(task: TaskCD, isCompleted: Bool){
         task.completed = isCompleted

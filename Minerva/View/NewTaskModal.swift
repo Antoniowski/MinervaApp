@@ -88,9 +88,7 @@ struct NewTaskModal: View{
                             sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
                         }
                         else {
-                            sharedData.UpdateTask(task: referredTask, title: titleField)
-                            sharedData.UpdateTask(task: referredTask, desc: descriptionField)
-                            sharedData.UpdateTask(task: referredTask, priority: priorityValue)
+                            sharedData.UpdateTask2(task: referredTask, title: titleField, desc: descriptionField, priority: priorityValue)
                         }
                         sharedData.FetchOrdered()
                         dismiss()
@@ -103,9 +101,3 @@ struct NewTaskModal: View{
     }
     
 }
-
-//struct ContentView3_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewTaskModal(allTasks:)
-//    }
-//}
