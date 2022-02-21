@@ -11,27 +11,31 @@ import SwiftUI
 struct CardComponent: View {
     
     @Environment(\.colorScheme) var colorScheme
+    @State var progressValue: Float = 0.0
     
     var body: some View{
         ZStack{
             VStack{
-                Circle()
-                    .frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4.5, alignment: .leading)
-                //                    .border(.green)
-                
+                NewChartComponent()
+                    .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3)
+                        
+                        
+                HStack{
+                    
+                }.frame(width: 100, height: 20)
                 
                 VStack{
                     Text("Monday")
-                        .font(.custom("Noteworthy-Bold", size: 24))
+                        .font(.custom("Noteworthy-Bold", size: 25))
                     //                        .border(.blue)
                     Text("Exercise...")
                     Text("Complete...")
-                } . frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/8, alignment: .leading)
+                } . frame(width: UIScreen.main.bounds.width/2.5, height: UIScreen.main.bounds.width/8, alignment: .leading)
                 //                    .border(.red)
                 
                 
             }
-        }.frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/2)
+        }.frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.width/1.3)
             .background(colorScheme == .dark ? Color( red: 69/255, green: 74/255, blue: 114/255, opacity: 1) : Color(red: 227/255, green: 224/255, blue: 249/255))
         //            .border(.red)
             .cornerRadius(15)
