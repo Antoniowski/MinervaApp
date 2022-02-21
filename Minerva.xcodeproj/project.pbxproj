@@ -201,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */,
-				6A67B01D27C3E23B0036DBA9 /* PercentageManager.swift */,
 				6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */,
 				6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */,
 			);
@@ -226,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				6A09180E27BFD9000081A72B /* TaskStore.swift */,
+				6A67B01D27C3E23B0036DBA9 /* PercentageManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
