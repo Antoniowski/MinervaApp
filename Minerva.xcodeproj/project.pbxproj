@@ -34,6 +34,7 @@
 		6ACDFAFA27B6A5CD008EF188 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */; };
 		6ACDFAFF27B6A939008EF188 /* TaskControllerCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */; };
 		6ACDFB0227B6AFA2008EF188 /* TaskModelCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */; };
+		9ED1478927C3F66D0087FA70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED1478827C3F66D0087FA70 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerCD.swift; sourceTree = "<group>"; };
 		6ACDFB0127B6AFA2008EF188 /* TaskModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModelCD.xcdatamodel; sourceTree = "<group>"; };
+		9ED1478827C3F66D0087FA70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../../LaunchScreen/LaunchScreen/Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				6ACDFAF127B69AD9008EF188 /* Model */,
 				6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */,
 				6ACDFACB27B69AA6008EF188 /* Assets.xcassets */,
+				9ED1478827C3F66D0087FA70 /* Launch Screen.storyboard */,
 				6ACDFACD27B69AA6008EF188 /* Preview Content */,
 			);
 			path = Minerva;
@@ -347,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED1478927C3F66D0087FA70 /* Launch Screen.storyboard in Resources */,
 				6ACDFACF27B69AA6008EF188 /* Preview Assets.xcassets in Resources */,
 				6ACDFACC27B69AA6008EF188 /* Assets.xcassets in Resources */,
 			);
