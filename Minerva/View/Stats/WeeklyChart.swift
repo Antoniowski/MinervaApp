@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct WeeklyChart: View {
-    
+    @EnvironmentObject var sharedData: TaskStore
     @State var progressValue: Float = 0.0
     
     var body: some View {
@@ -21,7 +21,7 @@ struct WeeklyChart: View {
                     .padding(40.0)
                 
                 Button (action: {
-                    self.incrementProgress()
+
                 }) {
                     HStack{
                         Text("")
@@ -35,16 +35,20 @@ struct WeeklyChart: View {
             
             
         }
+        .onAppear(perform: {
+            sharedData.PercentageUpdate()
+            incrementProgress()
+        })
         
     }
     
     func incrementProgress() {
-        let randomValue: Float = 0.5
-        self.progressValue += randomValue
+        self.progressValue = sharedData.percentage
     }
 }
 
 struct ProgressBar1: View {
+    @EnvironmentObject var sharedData: TaskStore
     @Binding var progress: Float
     
     var body: some View {

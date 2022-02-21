@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct StatsView: View {
+    @EnvironmentObject var sharedData: TaskStore
     var body: some View{
         VStack{
             
@@ -20,16 +21,11 @@ struct StatsView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                    }.padding(.horizontal, 15)
-                        
-                    
+                        ForEach(0...6, id: \.self){_ in
+                            CardComponent()
+                        }
+                    }
+                    .padding(.horizontal, 15)
                 }
                 
                 
@@ -40,10 +36,12 @@ struct StatsView: View {
             }
             
         }
+        .onAppear(perform: {
+        })
     }
 }
-struct ContentView_Previews4: PreviewProvider {
-    static var previews: some View {
-        StatsView()
-    }
-}
+//struct ContentView_Previews4: PreviewProvider {
+//    static var previews: some View {
+//        StatsView()
+//    }
+//}
