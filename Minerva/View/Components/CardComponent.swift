@@ -22,24 +22,27 @@ struct CardComponent: View {
                         
                 HStack{
                     
-                }.frame(width: 100, height: 20)
+                }.frame(width: 100, height: 10)
                 
                 VStack{
                     Text("Monday")
                         .font(.custom("Noteworthy-Bold", size: 25))
                     //                        .border(.blue)
                     Text("Exercise...")
-                    Text("Complete...")
-                } . frame(width: UIScreen.main.bounds.width/2.5, height: UIScreen.main.bounds.width/8, alignment: .leading)
+                    
+                } . frame(width: UIScreen.main.bounds.width/2.8, height: UIScreen.main.bounds.width/8, alignment: .leading)
                 //                    .border(.red)
                 
                 
             }
-        }.frame(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.width/1.3)
+        }.frame(width: UIScreen.main.bounds.width/2.4, height: UIScreen.main.bounds.width/1.5)
             .background(colorScheme == .dark ? Color( red: 69/255, green: 74/255, blue: 114/255, opacity: 1) : Color(red: 227/255, green: 224/255, blue: 249/255))
         //            .border(.red)
             .cornerRadius(15)
             .shadow(color: .black .opacity(0.5), radius: 3, x: 2, y: 4)
+            .padding(6)
+            
+            
         
     }
 }
