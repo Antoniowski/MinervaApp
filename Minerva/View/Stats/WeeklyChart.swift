@@ -16,7 +16,7 @@ struct WeeklyChart: View {
         ZStack{
             
             ZStack {
-                ProgressBar(progress: self.$progressValue)
+                ProgressBar1(progress: self.$progressValue)
                     .frame(width: UIScreen.main.bounds.width*0.6, height: UIScreen.main.bounds.width*0.6)
                     .padding(40.0)
                 
@@ -65,7 +65,7 @@ struct ProgressBar1: View {
                 .animation(.default, value: progress)
             
             Text(String(format: "%.0f%%", min(self.progress, 1.0)*100.0))
-                .font(.system(size: 200))
+                .font(.system(size: 50))
                 .bold()
             
         }
