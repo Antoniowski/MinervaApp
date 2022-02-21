@@ -31,6 +31,16 @@ class TaskStore: ObservableObject{
         task.priority = priority.rawValue
         task.completed = completed
         task.date_of_activity = date
+        switch(priority.rawValue){
+        case "a":
+            task.peso = 0.75
+        case "b":
+            task.peso = 1
+        case "c":
+            task.peso = 1.25
+        default:
+            task.peso = 1
+        }
         
         do{
             try TaskControllerCD.shared.dataContainer.viewContext.save()
