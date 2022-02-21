@@ -21,13 +21,9 @@ struct StatsView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
-                        CardComponent()
+                        ForEach(0...6, id: \.self){_ in
+                            CardComponent()
+                        }
                     }.padding(.horizontal, 15)
                     
                     
@@ -84,8 +80,6 @@ struct StatsView: View {
             }
             
         }
-        .onAppear(perform: {
-        })
     }
 }
 //struct ContentView_Previews4: PreviewProvider {

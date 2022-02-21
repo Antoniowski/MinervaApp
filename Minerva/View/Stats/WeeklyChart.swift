@@ -27,7 +27,6 @@ struct WeeklyChart: View {
                         Text("")
                     }
                     .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8)
-                    .border(.green)
                     
                     
                 }
@@ -50,19 +49,37 @@ struct WeeklyChart: View {
 struct ProgressBar1: View {
     @EnvironmentObject var sharedData: TaskStore
     @Binding var progress: Float
+    @State private var scale: Double = 1
+    @State private var timer = Timer.publish(every: 0.8, on: .main, in: .common).autoconnect()
+    
     
     var body: some View {
         ZStack {
             Circle()
+                .stroke(style: StrokeStyle(lineWidth: 30, lineCap: .round, lineJoin: .round))
+                .foregroundColor(.blue.opacity(0.3))
+                .foregroundColor(Color.clear)
+                .scaleEffect(scale)
+                .onReceive(timer, perform: {_ in
+                    withAnimation(.easeInOut(duration: 0.8)){
+                        if scale == 1{
+                            scale += 0.2
+                        }else{
+                            scale -= 0.2
+                        }
+                    }
+                })
+            
+            Circle()
                 .stroke(lineWidth: 30.0)
-                .opacity(0.15)
-                .foregroundColor(Color.black)
+                .opacity(1)
+                .foregroundColor(Color(white: 0.9))
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                 .stroke(style: StrokeStyle(lineWidth: 30.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(Color.blue)
                 .rotationEffect(Angle(degrees: 270.0))
-                .animation(.default, value: progress)
+                .animation(.easeInOut(duration: 1), value: progress)
             
             Text(String(format: "%.0f%%", min(self.progress, 1.0)*100.0))
                 .font(.system(size: 50))
@@ -71,8 +88,8 @@ struct ProgressBar1: View {
         }
     }
 }
-struct ContentView_Previews5: PreviewProvider {
-    static var previews: some View {
-        WeeklyChart()
-    }
-}
+//struct ContentView_Previews5: PreviewProvider {
+//    static var previews: some View {
+//        WeeklyChart()
+//    }
+//}
