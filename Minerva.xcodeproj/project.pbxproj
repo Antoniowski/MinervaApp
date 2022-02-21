@@ -16,6 +16,7 @@
 		6335CAF927BA9F3600F03957 /* NewTaskRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335CAF827BA9F3600F03957 /* NewTaskRectangle.swift */; };
 		6335CAFD27BAA85E00F03957 /* NewTaskModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */; };
 		63D94E8E27C3CCD60058BEDB /* NewChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D94E8D27C3CCD60058BEDB /* NewChartComponent.swift */; };
+		63D94E9027C3E2920058BEDB /* WeeklyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */; };
 		63FEA13727BFD90B002F16B6 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEA13627BFD90B002F16B6 /* CardComponent.swift */; };
 		6A09180A27BF02480081A72B /* TaskRectangleEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09180927BF02480081A72B /* TaskRectangleEdit.swift */; };
 		6A09180F27BFD9000081A72B /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09180E27BFD9000081A72B /* TaskStore.swift */; };
@@ -62,6 +63,7 @@
 		6335CAF827BA9F3600F03957 /* NewTaskRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskRectangle.swift; sourceTree = "<group>"; };
 		6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModal.swift; sourceTree = "<group>"; };
 		63D94E8D27C3CCD60058BEDB /* NewChartComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChartComponent.swift; sourceTree = "<group>"; };
+		63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChart.swift; sourceTree = "<group>"; };
 		63FEA13627BFD90B002F16B6 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		6A09180927BF02480081A72B /* TaskRectangleEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRectangleEdit.swift; sourceTree = "<group>"; };
 		6A09180E27BFD9000081A72B /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				632B7ECC27BD3A500029DD0A /* StatsView.swift */,
+				63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */,
 				632B7ED027BD3AD40029DD0A /* NavViewStats.swift */,
 			);
 			path = Stats;
@@ -372,6 +375,7 @@
 			files = (
 				632B7ECB27BD3A420029DD0A /* TeamView.swift in Sources */,
 				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
+				63D94E9027C3E2920058BEDB /* WeeklyChart.swift in Sources */,
 				6A09180F27BFD9000081A72B /* TaskStore.swift in Sources */,
 				6A09180A27BF02480081A72B /* TaskRectangleEdit.swift in Sources */,
 				63D94E8E27C3CCD60058BEDB /* NewChartComponent.swift in Sources */,
