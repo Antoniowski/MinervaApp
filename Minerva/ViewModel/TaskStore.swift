@@ -290,7 +290,6 @@ class TaskStore: ObservableObject{
             }else if T.priority == "b"{
                 midQty += 1
             }else{
-                print("\(String(describing: T.priority))")
                 highQty += 1
             }
         }

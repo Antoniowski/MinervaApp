@@ -10,6 +10,7 @@ import SwiftUI
 
 struct StatsView: View {
     @EnvironmentObject var sharedData: TaskStore
+    let weekdays: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     var body: some View{
         VStack{
             
@@ -21,8 +22,8 @@ struct StatsView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        ForEach(0...6, id: \.self){_ in
-                            CardComponent()
+                        ForEach(weekdays, id: \.self){weekday in
+                            CardComponent(weekday: weekday)
                         }
                     }.padding(.horizontal, 15)
                     

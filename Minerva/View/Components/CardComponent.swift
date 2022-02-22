@@ -12,6 +12,8 @@ struct CardComponent: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State var progressValue: Float = 0.0
+    @State var date: Date = Date()
+    @State var weekday: String = ""
     
     var body: some View{
         ZStack{
@@ -25,7 +27,7 @@ struct CardComponent: View {
                 }.frame(width: 100, height: 10)
                 
                 VStack{
-                    Text("Monday")
+                    Text("\(weekday)")
                         .font(.custom("Noteworthy-Bold", size: 25))
                     //                        .border(.blue)
                     Text("Exercise...")
@@ -44,6 +46,13 @@ struct CardComponent: View {
             
             
         
+    }
+    
+    func GetWeekday(date: Date)->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let weekday = dateFormatter.string(from: date)
+        return weekday
     }
 }
 struct ContentView_Previews: PreviewProvider {
