@@ -57,15 +57,15 @@ struct ProgressBar1: View {
         ZStack {
             Circle()
                 .stroke(style: StrokeStyle(lineWidth: 30, lineCap: .round, lineJoin: .round))
+                .shadow(color: .blue.opacity(0.8), radius: 15)
                 .foregroundColor(.blue.opacity(0.3))
-                .foregroundColor(Color.clear)
                 .scaleEffect(scale)
                 .onReceive(timer, perform: {_ in
                     withAnimation(.easeInOut(duration: 0.8)){
                         if scale == 1{
-                            scale += 0.2
+                            scale += 0.1
                         }else{
-                            scale -= 0.2
+                            scale -= 0.1
                         }
                     }
                 })

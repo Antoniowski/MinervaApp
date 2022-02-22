@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TaskRectangle: View {
     @EnvironmentObject var sharedData: TaskStore
-    @Environment(\.colorScheme) var colorScheme
     
     @State var title: String = ""
     @State var description: String = ""
@@ -85,7 +84,7 @@ struct TaskRectangle: View {
         }
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width*0.9, height: 80)
-        .background(colorScheme == .dark ? Color( red: 69/255, green: 74/255, blue: 114/255, opacity: 1) : Color(red: 227/255, green: 224/255, blue: 249/255))
+        .background(taskColor)
         .cornerRadius(15)
         .shadow(color: .black .opacity(0.5), radius: 3, x: 2, y: 4)
     }
