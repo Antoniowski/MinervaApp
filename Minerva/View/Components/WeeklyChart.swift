@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WeeklyChart: View {
     @EnvironmentObject var sharedData: TaskStore
+    @Environment(\.colorScheme) var colorScheme
     @State var progressValue: Float = 0.0
     
     var body: some View {
@@ -48,6 +49,7 @@ struct WeeklyChart: View {
 
 struct ProgressBar1: View {
     @EnvironmentObject var sharedData: TaskStore
+    @Environment(\.colorScheme) var colorScheme
     @Binding var progress: Float
     @State private var scale: Double = 1
     @State private var timer = Timer.publish(every: 0.8, on: .main, in: .common).autoconnect()
@@ -69,11 +71,21 @@ struct ProgressBar1: View {
                         }
                     }
                 })
+            Circle()
+                .stroke(colorScheme == .light ? .white : .black, lineWidth: 30.0)
+            Circle()
+                .foregroundColor(colorScheme == .light ? Color(white: 1) : Color(white: 0))
+                
+            Circle()
+                .stroke(lineWidth: 30.0)
+                .opacity(1)
+                .foregroundColor(Color.black)
             
             Circle()
                 .stroke(lineWidth: 30.0)
                 .opacity(1)
-                .foregroundColor(Color(white: 0.9))
+                .foregroundColor(colorScheme == .light ? Color(white: 0.9) : Color(white: 0.2))
+            
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                 .stroke(style: StrokeStyle(lineWidth: 30.0, lineCap: .round, lineJoin: .round))
