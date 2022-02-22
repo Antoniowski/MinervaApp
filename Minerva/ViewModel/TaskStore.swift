@@ -12,15 +12,20 @@ class TaskStore: ObservableObject{
     @Published var tasks: [TaskCD] = []
     @Published var orderedTask: [TaskCD] = []
     
+    @Published var dateManager = DateManager()
+    
     @Published var percentage: Float = 0
+    
+    //    LE QUANTITA' SI RIFERISCONO SOLO ALLA SETTIMANA CORRENTE
     @Published var tasksQty: Int = 0
     @Published var lowQty: Float = 0
     @Published var midQty: Float = 0
     @Published var highQty: Float = 0
+    
     @Published var relLowWeight: Float = 0
     @Published var relMidWeight: Float = 0
     @Published var relHighWeight: Float = 0
-
+    
     private let lowWeight: Float = 0.75
     private let midWeight: Float = 1
     private let highWeight: Float = 1.25
@@ -61,16 +66,20 @@ class TaskStore: ObservableObject{
         
         do{
             try TaskControllerCD.shared.dataContainer.viewContext.save()
-            tasksQty+=1
-            switch(task.priority){
-            case "a": lowQty+=1
-            case "b": midQty+=1
-            case "c": highQty+=1
-            default: print("SWITCH FAILED")
+            dateManager.GetLastMonday()
+            dateManager.GetSunday()
+            if task.date_of_activity ?? Date() < dateManager.endingDay && task.date_of_activity ?? Date() > dateManager.startingDay{
+                tasksQty+=1
+                switch(task.priority){
+                case "a": lowQty+=1
+                case "b": midQty+=1
+                case "c": highQty+=1
+                default: print("SWITCH FAILED")
+                }
+                WeightCalc()
+                //            print("\(relMidWeight), \(relLowWeight), \(relHighWeight)")
+                //            print("\(lowQty), \(midQty), \(highQty)")
             }
-            WeightCalc()
-//            print("\(relMidWeight), \(relLowWeight), \(relHighWeight)")
-//            print("\(lowQty), \(midQty), \(highQty)")
         }catch{
             print("Failed save")
         }
@@ -95,30 +104,33 @@ class TaskStore: ObservableObject{
     }
     
     func DeleteTask(task: TaskCD){
-//        print("\(String(describing: task.priority))")
-//        print("Optional(\"c\")")
+        //        print("\(String(describing: task.priority))")
+        //        print("Optional(\"c\")")
         TaskControllerCD.shared.dataContainer.viewContext.delete(task)
         do{
             try TaskControllerCD.shared.dataContainer.viewContext.save()
-            tasksQty-=1
-            if task.priority == "Optional(\"a\")"{
-                lowQty-=1
-            }else if task.priority == "Optional(\"b\")"{
-                midQty-=1
-            }else{
-                highQty-=1
+            dateManager.GetLastMonday()
+            dateManager.GetSunday()
+            if task.date_of_activity ?? Date() < dateManager.endingDay && task.date_of_activity ?? Date() > dateManager.startingDay{
+                tasksQty-=1
+                if task.priority == "Optional(\"a\")"{
+                    lowQty-=1
+                }else if task.priority == "Optional(\"b\")"{
+                    midQty-=1
+                }else{
+                    highQty-=1
+                }
+                if tasksQty == 0{
+                    relLowWeight = 0
+                    relMidWeight = 0
+                    relHighWeight = 0
+                    percentage = 0
+                }else{
+                    WeightCalc()
+                    //                print("\(relMidWeight), \(relLowWeight), \(relHighWeight)")
+                    print("\(lowQty), \(midQty), \(highQty)")
+                }
             }
-            if tasksQty == 0{
-                relLowWeight = 0
-                relMidWeight = 0
-                relHighWeight = 0
-                percentage = 0
-            }else{
-                WeightCalc()
-//                print("\(relMidWeight), \(relLowWeight), \(relHighWeight)")
-               print("\(lowQty), \(midQty), \(highQty)")
-            }
-            
         }catch{
             TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Delete Failed")
@@ -134,38 +146,43 @@ class TaskStore: ObservableObject{
         AddTask(title: title, description: desc, priority: priority, completed: taskAppoggio.completed, date: taskAppoggio.date_of_activity ?? Date())
     }
     
-//    func UpdateTask(task: TaskCD, title: String, desc: String, priority: PriorityLevel){
-//        task.title = title
-//        task.activity_description = desc
-//        task.priority = priority.rawValue
-//        do{
-//            try TaskControllerCD.shared.dataContainer.viewContext.save()
-//        }catch{
-//            TaskControllerCD.shared.dataContainer.viewContext.rollback()
-//            print("Update Failed")
-//        }
-//    }
+    //    func UpdateTask(task: TaskCD, title: String, desc: String, priority: PriorityLevel){
+    //        task.title = title
+    //        task.activity_description = desc
+    //        task.priority = priority.rawValue
+    //        do{
+    //            try TaskControllerCD.shared.dataContainer.viewContext.save()
+    //        }catch{
+    //            TaskControllerCD.shared.dataContainer.viewContext.rollback()
+    //            print("Update Failed")
+    //        }
+    //    }
     
     func UpdateTask(task: TaskCD, isCompleted: Bool){
         task.completed = isCompleted
         do{
             try TaskControllerCD.shared.dataContainer.viewContext.save()
             if isCompleted == true{
-                if task.priority == "Optional(\"a\")"{
-                    percentage += relLowWeight
-                }else if task.priority == "Optional(\"b\")"{
-                    percentage += relMidWeight
+                dateManager.GetLastMonday()
+                dateManager.GetSunday()
+                if task.date_of_activity ?? Date() < dateManager.endingDay && task.date_of_activity ?? Date() > dateManager.startingDay{
+                    if task.priority == "Optional(\"a\")"{
+                        percentage += relLowWeight
+                    }else if task.priority == "Optional(\"b\")"{
+                        percentage += relMidWeight
+                    }else{
+                        percentage += relHighWeight
+                    }
                 }else{
-                    percentage += relHighWeight
+                    if task.priority == "Optional(\"a\")"{
+                        percentage -= relLowWeight
+                    }else if task.priority == "Optional(\"b\")"{
+                        percentage -= relMidWeight
+                    }else{
+                        percentage -= relHighWeight
+                    }
                 }
-            }else{
-                if task.priority == "Optional(\"a\")"{
-                    percentage -= relLowWeight
-                }else if task.priority == "Optional(\"b\")"{
-                    percentage -= relMidWeight
-                }else{
-                    percentage -= relHighWeight
-                }
+                
             }
         }catch{
             TaskControllerCD.shared.dataContainer.viewContext.rollback()
@@ -268,7 +285,7 @@ class TaskStore: ObservableObject{
     }
     
     
-//    ******FUNZIONI PER LA PERCENTUALE******
+    //    ******FUNZIONI PER LA PERCENTUALE******
     
     
     
@@ -284,13 +301,17 @@ class TaskStore: ObservableObject{
         highQty = 0
         
         FetchTasks()
+        dateManager.GetLastMonday()
+        dateManager.GetSunday()
         for T in tasks{
-            if T.priority == "a"{
-                lowQty += 1
-            }else if T.priority == "b"{
-                midQty += 1
-            }else{
-                highQty += 1
+            if T.date_of_activity ?? Date() < dateManager.endingDay && T.date_of_activity ?? Date() > dateManager.startingDay{
+                if T.priority == "a"{
+                    lowQty += 1
+                }else if T.priority == "b"{
+                    midQty += 1
+                }else{
+                    highQty += 1
+                }
             }
         }
     }
@@ -300,14 +321,18 @@ class TaskStore: ObservableObject{
         TasksQtyUpdate()
         WeightCalc()
         FetchTasks()
+        dateManager.GetLastMonday()
+        dateManager.GetSunday()
         for T in tasks{
-            if T.completed{
-                if T.priority == "a"{
-                    percentage += relLowWeight
-                }else if T.priority == "b"{
-                    percentage += relMidWeight
-                }else{
-                    percentage += relHighWeight
+            if T.date_of_activity ?? Date() < dateManager.endingDay && T.date_of_activity ?? Date() > dateManager.startingDay{
+                if T.completed{
+                    if T.priority == "a"{
+                        percentage += relLowWeight
+                    }else if T.priority == "b"{
+                        percentage += relMidWeight
+                    }else{
+                        percentage += relHighWeight
+                    }
                 }
             }
         }

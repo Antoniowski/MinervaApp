@@ -34,6 +34,7 @@
 		6ACDFAFF27B6A939008EF188 /* TaskControllerCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */; };
 		6ACDFB0227B6AFA2008EF188 /* TaskModelCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */; };
 		6AD7B07E27C4F17C004A1FD3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7B07D27C4F17C004A1FD3 /* Colors.swift */; };
+		6AD7B08027C52715004A1FD3 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7B07F27C52715004A1FD3 /* DateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerCD.swift; sourceTree = "<group>"; };
 		6ACDFB0127B6AFA2008EF188 /* TaskModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModelCD.xcdatamodel; sourceTree = "<group>"; };
 		6AD7B07D27C4F17C004A1FD3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6AD7B07F27C52715004A1FD3 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6A09180E27BFD9000081A72B /* TaskStore.swift */,
+				6AD7B07F27C52715004A1FD3 /* DateManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD7B08027C52715004A1FD3 /* DateManager.swift in Sources */,
 				632B7ECB27BD3A420029DD0A /* TeamView.swift in Sources */,
 				6AD7B07E27C4F17C004A1FD3 /* Colors.swift in Sources */,
 				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
