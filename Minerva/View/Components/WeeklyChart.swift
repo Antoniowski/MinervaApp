@@ -33,7 +33,6 @@ struct WeeklyChart: View {
         }
         .onAppear(perform: {
             sharedData.TotalPercentageUpdate()
-            print("WEEK: \(sharedData.percentageManager.week.percentage)\nMONDAY: \(sharedData.percentageManager.monday.percentage)")
             incrementProgresso()
         })
         

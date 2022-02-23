@@ -95,17 +95,18 @@ struct OnboardingView: View {
                 }
                 HStack{}.frame(minHeight: 0, maxHeight: .infinity)
 
-                Button("Continue"){
+                Button(action:{
                     let impactMed = UIImpactFeedbackGenerator(style: .medium)
                     impactMed.impactOccurred()
                     dismiss()
-                }
-                .foregroundColor(.white)
-                .frame(width: UIScreen.main.bounds.width*0.9, height: 45)
-                .background(.blue.opacity(1))
-                .cornerRadius(15)
-                .padding(.bottom)
-                //            .shadow(color: .black .opacity(0.5), radius: 3, x: 2, y: 4)
+                }, label:{
+                    Text("Continue")
+                        .frame(width: UIScreen.main.bounds.width*0.9, height: 45)
+                        .foregroundColor(.white)
+                        .background(.blue.opacity(1))
+                        .cornerRadius(15)
+                        .padding(.bottom)
+                })
             }
         }
     }

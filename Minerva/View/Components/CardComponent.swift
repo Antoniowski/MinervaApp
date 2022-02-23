@@ -29,8 +29,8 @@ struct CardComponent: View {
                 VStack{
                     Text("\(weekday)")
                         .font(.custom("Noteworthy-Bold", size: 25))
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                     //                        .border(.blue)
-                    Text("Exercise...")
                     
                 } . frame(width: UIScreen.main.bounds.width/2.8, height: UIScreen.main.bounds.width/8, alignment: .leading)
                 //                    .border(.red)

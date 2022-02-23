@@ -23,7 +23,6 @@ struct NewChartComponent: View {
                     .padding(40.0)
         }
         .onAppear(perform: {
-            print("\(sharedData.percentageManager.monday.tasksQty)")
             self.incrementProgress()
         })
     }
@@ -55,7 +54,7 @@ struct ProgressBarDay: View {
                 .stroke(style: StrokeStyle(lineWidth: 16.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(Color.blue)
                 .rotationEffect(Angle(degrees: 270.0))
-                .animation(.default, value: progress)
+                .animation(.easeInOut(duration: 1), value: progress)
             
             Text(String(format: "%.0f%%", min(self.progress, 1.0)*100.0))
                 .font(.system(size: 28))
