@@ -37,7 +37,7 @@ struct StatsView: View {
                     . frame(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.width/11, alignment: .leading)
                 
                 
-                ScrollView(.horizontal){
+                ScrollView(.horizontal, showsIndicators: false){
                     HStack{
                         VStack{
                             Image("BadgeProva")
