@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    @AppStorage("newUser") var newUser: Bool = true
+
     @EnvironmentObject var sharedData: TaskStore
-    @State var newUser: Bool = true
     @State var editStatus: Bool = false
     var body: some View {
         TabView{

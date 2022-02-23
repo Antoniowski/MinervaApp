@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct OnboardingView: View {
+    @AppStorage("newUser") var newUser: Bool = true
+    
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) private var dismiss
     
@@ -98,6 +100,7 @@ struct OnboardingView: View {
                 Button(action:{
                     let impactMed = UIImpactFeedbackGenerator(style: .medium)
                     impactMed.impactOccurred()
+                    newUser = false
                     dismiss()
                 }, label:{
                     Text("Continue")

@@ -27,7 +27,7 @@ struct CardComponent: View {
                 }.frame(width: 100, height: 10)
                 
                 VStack{
-                    Text("\(weekday)")
+                    Text(LocalizeStrings(weekday))
                         .font(.custom("Noteworthy-Bold", size: 25))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                     //                        .border(.blue)

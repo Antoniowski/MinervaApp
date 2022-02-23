@@ -28,7 +28,7 @@ struct TeamView: View {
                         }
                     }
                 })
-             Text("Group section coming Soon")
+             Text("Group section coming soon")
                 .foregroundColor(.secondary.opacity(0.5))
 
         }

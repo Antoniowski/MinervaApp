@@ -36,13 +36,13 @@ struct TaskRectangleEdit: View {
                         Image(systemName: "checkmark")
                             .foregroundColor(Color.blue)
                     }
-                    Button(action: {
-                        isCompleted.toggle()
-                        sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
-                    }, label: {
-                        HStack{}
-                        .frame(width: UIScreen.main.bounds.width/9, height: 45)
-                    })
+//                    Button(action: {
+//                        isCompleted.toggle()
+//                        sharedData.UpdateTask(task: referredTask, isCompleted: isCompleted)
+//                    }, label: {
+//                        HStack{}
+//                        .frame(width: UIScreen.main.bounds.width/9, height: 45)
+//                    })
                 }
                 .frame(width: UIScreen.main.bounds.width/9, height: 45)
                 .background(Color.white)
