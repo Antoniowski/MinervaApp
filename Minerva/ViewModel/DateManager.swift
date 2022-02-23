@@ -60,7 +60,7 @@ class DateManager{
 
 extension String {
     func numberOfSeconds() -> Double {
-       var components: Array = self.components(separatedBy: ":")
+       let components: Array = self.components(separatedBy: ":")
        let hours = Double(components[0]) ?? 0
        let minutes = Double(components[1]) ?? 0
        let seconds = Double(components[2]) ?? 0

@@ -18,7 +18,7 @@ struct CardComponent: View {
     var body: some View{
         ZStack{
             VStack{
-                NewChartComponent()
+                NewChartComponent(weekday: $weekday)
                     .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3)
                         
                         
