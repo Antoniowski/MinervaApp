@@ -14,7 +14,7 @@ struct NewChartComponent: View {
     
     var body: some View {
         ZStack{
-            Color(red: 227/255, green: 224/255, blue: 249/255, opacity: 1)
+            taskColor
                 .edgesIgnoringSafeArea(.all)
             ZStack {
                 ProgressBar(progress: self.$progressValue)
@@ -68,5 +68,6 @@ struct ProgressBar: View {
 struct ContentView_Previews3: PreviewProvider {
     static var previews: some View {
         NewChartComponent()
+            .preferredColorScheme(.dark)
     }
 }

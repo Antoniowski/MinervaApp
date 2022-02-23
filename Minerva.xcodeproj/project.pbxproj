@@ -20,7 +20,6 @@
 		63FEA13727BFD90B002F16B6 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEA13627BFD90B002F16B6 /* CardComponent.swift */; };
 		6A09180A27BF02480081A72B /* TaskRectangleEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09180927BF02480081A72B /* TaskRectangleEdit.swift */; };
 		6A09180F27BFD9000081A72B /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09180E27BFD9000081A72B /* TaskStore.swift */; };
-		6A67B01E27C3E23B0036DBA9 /* PercentageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67B01D27C3E23B0036DBA9 /* PercentageManager.swift */; };
 		6A6DD79227BD513000007B10 /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DD79127BD513000007B10 /* LanguageSelector.swift */; };
 		6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */; };
 		6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC927B69AA5008EF188 /* MainView.swift */; };
@@ -34,7 +33,8 @@
 		6ACDFAFA27B6A5CD008EF188 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */; };
 		6ACDFAFF27B6A939008EF188 /* TaskControllerCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */; };
 		6ACDFB0227B6AFA2008EF188 /* TaskModelCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */; };
-		9ED1478927C3F66D0087FA70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED1478827C3F66D0087FA70 /* Launch Screen.storyboard */; };
+		6AD7B07E27C4F17C004A1FD3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7B07D27C4F17C004A1FD3 /* Colors.swift */; };
+		6AD7B08027C52715004A1FD3 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7B07F27C52715004A1FD3 /* DateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 		63FEA13627BFD90B002F16B6 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		6A09180927BF02480081A72B /* TaskRectangleEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRectangleEdit.swift; sourceTree = "<group>"; };
 		6A09180E27BFD9000081A72B /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
-		6A67B01D27C3E23B0036DBA9 /* PercentageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageManager.swift; sourceTree = "<group>"; };
 		6A6DD79127BD513000007B10 /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
 		6ACDFAC427B69AA5008EF188 /* Minerva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minerva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaApp.swift; sourceTree = "<group>"; };
@@ -85,7 +84,8 @@
 		6ACDFAF927B6A5CD008EF188 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerCD.swift; sourceTree = "<group>"; };
 		6ACDFB0127B6AFA2008EF188 /* TaskModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModelCD.xcdatamodel; sourceTree = "<group>"; };
-		9ED1478827C3F66D0087FA70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../../LaunchScreen/LaunchScreen/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		6AD7B07D27C4F17C004A1FD3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6AD7B07F27C52715004A1FD3 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				632B7ECC27BD3A500029DD0A /* StatsView.swift */,
-				63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */,
 				632B7ED027BD3AD40029DD0A /* NavViewStats.swift */,
 			);
 			path = Stats;
@@ -168,8 +167,8 @@
 				6ACDFAF227B69ADF008EF188 /* View */,
 				6ACDFAF127B69AD9008EF188 /* Model */,
 				6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */,
+				6AD7B07D27C4F17C004A1FD3 /* Colors.swift */,
 				6ACDFACB27B69AA6008EF188 /* Assets.xcassets */,
-				9ED1478827C3F66D0087FA70 /* Launch Screen.storyboard */,
 				6ACDFACD27B69AA6008EF188 /* Preview Content */,
 			);
 			path = Minerva;
@@ -228,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6A09180E27BFD9000081A72B /* TaskStore.swift */,
-				6A67B01D27C3E23B0036DBA9 /* PercentageManager.swift */,
+				6AD7B07F27C52715004A1FD3 /* DateManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				6ACDFAF727B6A2FC008EF188 /* TaskRectangle.swift */,
+				63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */,
 				6335CAF827BA9F3600F03957 /* NewTaskRectangle.swift */,
 				6A6DD79127BD513000007B10 /* LanguageSelector.swift */,
 				6A09180927BF02480081A72B /* TaskRectangleEdit.swift */,
@@ -350,7 +350,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED1478927C3F66D0087FA70 /* Launch Screen.storyboard in Resources */,
 				6ACDFACF27B69AA6008EF188 /* Preview Assets.xcassets in Resources */,
 				6ACDFACC27B69AA6008EF188 /* Assets.xcassets in Resources */,
 			);
@@ -377,7 +376,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD7B08027C52715004A1FD3 /* DateManager.swift in Sources */,
 				632B7ECB27BD3A420029DD0A /* TeamView.swift in Sources */,
+				6AD7B07E27C4F17C004A1FD3 /* Colors.swift in Sources */,
 				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
 				63D94E9027C3E2920058BEDB /* WeeklyChart.swift in Sources */,
 				6A09180F27BFD9000081A72B /* TaskStore.swift in Sources */,
@@ -387,7 +388,6 @@
 				632B7ED327BD3D020029DD0A /* OnboardingView.swift in Sources */,
 				632B7ECF27BD3AC50029DD0A /* NavViewTeam.swift in Sources */,
 				6335CAFD27BAA85E00F03957 /* NewTaskModal.swift in Sources */,
-				6A67B01E27C3E23B0036DBA9 /* PercentageManager.swift in Sources */,
 				6A6DD79227BD513000007B10 /* LanguageSelector.swift in Sources */,
 				632B7EC927BD34480029DD0A /* NavViewMyPlanner.swift in Sources */,
 				6ACDFB0227B6AFA2008EF188 /* TaskModelCD.xcdatamodeld in Sources */,
@@ -559,7 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Minerva/Preview Content\"";
-				DEVELOPMENT_TEAM = 6SG4QBNJ5C;
+				DEVELOPMENT_TEAM = YT6T4953M8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -589,7 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Minerva/Preview Content\"";
-				DEVELOPMENT_TEAM = 6SG4QBNJ5C;
+				DEVELOPMENT_TEAM = YT6T4953M8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
