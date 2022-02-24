@@ -73,6 +73,7 @@
 		6A09180E27BFD9000081A72B /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		6A6DD79127BD513000007B10 /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
 		6A9ED7BB27C6794200A14959 /* PercentageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageManager.swift; sourceTree = "<group>"; };
+		6ABACE6027C7D94600902473 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6ACDFAC427B69AA5008EF188 /* Minerva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minerva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinervaApp.swift; sourceTree = "<group>"; };
 		6ACDFAC927B69AA5008EF188 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -452,6 +453,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6ADDE25B27C6D8FD00464D21 /* it */,
+				6ABACE6027C7D94600902473 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
