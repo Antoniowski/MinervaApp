@@ -55,42 +55,42 @@ class PercentageManager{
             }
             
             switch(dateWeekday){
-            case "Monday":
+            case "Monday", "lunedì":
                 switch(task.priority){
                 case "a": monday.lowQty+=1
                 case "b": monday.midQty+=1
                 case "c": monday.highQty+=1
                 default: print("SWITCH FAILED")
                 }
-            case "Tuesday":
+            case "Tuesday","martedì":
                 switch(task.priority){
                 case "a": tuesday.lowQty+=1
                 case "b": tuesday.midQty+=1
                 case "c": tuesday.highQty+=1
                 default: print("SWITCH FAILED")
                 }
-            case "Wednesday":
+            case "Wednesday", "mercoledì":
                 switch(task.priority){
                 case "a": wednesday.lowQty+=1
                 case "b": wednesday.midQty+=1
                 case "c": wednesday.highQty+=1
                 default: print("SWITCH FAILED")
                 }
-            case "Thursday":
+            case "Thursday", "giovedì":
                 switch(task.priority){
                 case "a": thurday.lowQty+=1
                 case "b": thurday.midQty+=1
                 case "c": thurday.highQty+=1
                 default: print("SWITCH FAILED")
                 }
-            case "Friday":
+            case "Friday", "venerdì":
                 switch(task.priority){
                 case "a": friday.lowQty+=1
                 case "b": friday.midQty+=1
                 case "c": friday.highQty+=1
                 default: print("SWITCH FAILED")
                 }
-            case "Saturday":
+            case "Saturday", "sabato":
                 switch(task.priority){
                 case "a": saturday.lowQty+=1
                 case "b": saturday.midQty+=1
@@ -107,17 +107,17 @@ class PercentageManager{
             }
             WeightCalc(appliedTo: &week)
             switch(dateWeekday){
-            case "Monday":
+            case "Monday", "lunedì":
                 WeightCalc(appliedTo: &monday)
-            case "Tuesday":
+            case "Tuesday", "martedì":
                 WeightCalc(appliedTo: &tuesday)
-            case "Wednesday":
+            case "Wednesday", "mercoledì":
                 WeightCalc(appliedTo: &wednesday)
-            case "Thursday":
+            case "Thursday", "giovedì":
                 WeightCalc(appliedTo: &thurday)
-            case "Friday":
+            case "Friday", "venerdì":
                 WeightCalc(appliedTo: &friday)
-            case "Saturday":
+            case "Saturday", "sabato":
                 WeightCalc(appliedTo: &saturday)
             default:
                 WeightCalc(appliedTo: &sunday)
@@ -151,7 +151,7 @@ class PercentageManager{
             }
             
             switch(dateWeekday){
-            case "Monday":
+            case "Monday", "lunedì":
                 if task.priority == "Optional(\"a\")"{
                     monday.lowQty-=1
                 }else if task.priority == "Optional(\"b\")"{
@@ -167,7 +167,7 @@ class PercentageManager{
                 }else{
                     WeightCalc(appliedTo: &monday)
                 }
-            case "Tuesday":
+            case "Tuesday", "martedì":
                 if task.priority == "Optional(\"a\")"{
                     tuesday.lowQty-=1
                 }else if task.priority == "Optional(\"b\")"{
@@ -183,7 +183,7 @@ class PercentageManager{
                 }else{
                     WeightCalc(appliedTo: &tuesday)
                 }
-            case "Wednesday":
+            case "Wednesday", "mercoledì":
                 if task.priority == "Optional(\"a\")"{
                     wednesday.lowQty-=1
                 }else if task.priority == "Optional(\"b\")"{
@@ -199,7 +199,7 @@ class PercentageManager{
                 }else{
                     WeightCalc(appliedTo: &wednesday)
                 }
-            case "Thursday":
+            case "Thursday", "giovedì":
                 if task.priority == "Optional(\"a\")"{
                     thurday.lowQty-=1
                 }else if task.priority == "Optional(\"b\")"{
@@ -215,7 +215,7 @@ class PercentageManager{
                 }else{
                     WeightCalc(appliedTo: &thurday)
                 }
-            case "Friday":
+            case "Friday", "venerdì":
                 if task.priority == "Optional(\"a\")"{
                     friday.lowQty-=1
                 }else if task.priority == "Optional(\"b\")"{
@@ -231,7 +231,7 @@ class PercentageManager{
                 }else{
                     WeightCalc(appliedTo: &friday)
                 }
-            case "Saturday":
+            case "Saturday", "sabato":
                 if task.priority == "Optional(\"a\")"{
                     saturday.lowQty-=1
                 }else if task.priority == "Optional(\"b\")"{
@@ -283,7 +283,7 @@ class PercentageManager{
                     week.percentage += week.relHighWeight
                 }
                 switch(dateWeekday){
-                case "Monday":
+                case "Monday", "lunedì":
                     if task.priority == "Optional(\"a\")"{
                         monday.percentage += monday.relLowWeight
                     }else if task.priority == "Optional(\"b\")"{
@@ -291,7 +291,7 @@ class PercentageManager{
                     }else{
                         monday.percentage += monday.relHighWeight
                     }
-                case "Tuesday":
+                case "Tuesday", "martedì":
                     if task.priority == "Optional(\"a\")"{
                         tuesday.percentage += tuesday.relLowWeight
                     }else if task.priority == "Optional(\"b\")"{
@@ -299,7 +299,7 @@ class PercentageManager{
                     }else{
                         tuesday.percentage += tuesday.relHighWeight
                     }
-                case "Wednesday":
+                case "Wednesday", "mercoledì":
                     if task.priority == "Optional(\"a\")"{
                         wednesday.percentage += wednesday.relLowWeight
                     }else if task.priority == "Optional(\"b\")"{
@@ -307,7 +307,7 @@ class PercentageManager{
                     }else{
                         wednesday.percentage += wednesday.relHighWeight
                     }
-                case "Thursday":
+                case "Thursday", "giovedì":
                     if task.priority == "Optional(\"a\")"{
                         thurday.percentage += thurday.relLowWeight
                     }else if task.priority == "Optional(\"b\")"{
@@ -315,7 +315,7 @@ class PercentageManager{
                     }else{
                         thurday.percentage += thurday.relHighWeight
                     }
-                case "Friday":
+                case "Friday", "venerdì":
                     if task.priority == "Optional(\"a\")"{
                         friday.percentage += friday.relLowWeight
                     }else if task.priority == "Optional(\"b\")"{
@@ -323,7 +323,7 @@ class PercentageManager{
                     }else{
                         friday.percentage += friday.relHighWeight
                     }
-                case "Saturday":
+                case "Saturday", "sabato":
                     if task.priority == "Optional(\"a\")"{
                         saturday.percentage += saturday.relLowWeight
                     }else if task.priority == "Optional(\"b\")"{
@@ -350,7 +350,7 @@ class PercentageManager{
                 }
             }
             switch(dateWeekday){
-            case "Monday":
+            case "Monday", "lunedì":
                 if task.priority == "Optional(\"a\")"{
                     monday.percentage -= monday.relLowWeight
                 }else if task.priority == "Optional(\"b\")"{
@@ -358,7 +358,7 @@ class PercentageManager{
                 }else{
                     monday.percentage -= monday.relHighWeight
                 }
-            case "Tuesday":
+            case "Tuesday", "martedì":
                 if task.priority == "Optional(\"a\")"{
                     tuesday.percentage -= tuesday.relLowWeight
                 }else if task.priority == "Optional(\"b\")"{
@@ -366,7 +366,7 @@ class PercentageManager{
                 }else{
                     tuesday.percentage -= tuesday.relHighWeight
                 }
-            case "Wednesday":
+            case "Wednesday", "mercoledì":
                 if task.priority == "Optional(\"a\")"{
                     wednesday.percentage -= wednesday.relLowWeight
                 }else if task.priority == "Optional(\"b\")"{
@@ -374,7 +374,7 @@ class PercentageManager{
                 }else{
                     wednesday.percentage -= wednesday.relHighWeight
                 }
-            case "Thursday":
+            case "Thursday", "giovedì":
                 if task.priority == "Optional(\"a\")"{
                     thurday.percentage -= thurday.relLowWeight
                 }else if task.priority == "Optional(\"b\")"{
@@ -382,7 +382,7 @@ class PercentageManager{
                 }else{
                     thurday.percentage -= thurday.relHighWeight
                 }
-            case "Friday":
+            case "Friday", "venerdì":
                 if task.priority == "Optional(\"a\")"{
                     friday.percentage -= friday.relLowWeight
                 }else if task.priority == "Optional(\"b\")"{
@@ -390,7 +390,7 @@ class PercentageManager{
                 }else{
                     friday.percentage -= friday.relHighWeight
                 }
-            case "Saturday":
+            case "Saturday", "sabato":
                 if task.priority == "Optional(\"a\")"{
                     saturday.percentage -= saturday.relLowWeight
                 }else if task.priority == "Optional(\"b\")"{

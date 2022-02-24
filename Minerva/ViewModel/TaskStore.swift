@@ -250,12 +250,12 @@ class TaskStore: ObservableObject{
             day = dateFormatter.string(from: T.date_of_activity ?? Date())
             percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.week, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
             switch(day){
-            case "Monday": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.monday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Tuesday": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.tuesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Wednesday": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.wednesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Thursday": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.thurday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Friday": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.friday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Saturday": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.saturday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Monday", "lunedì": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.monday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Tuesday", "martedì": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.tuesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Wednesday", "mercoledì": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.wednesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Thursday", "giovedì": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.thurday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Friday", "venerdì": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.friday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Saturday", "sabato": percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.saturday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
             default: percentageManager.TasksQtyUpdate(appliedTo: &percentageManager.sunday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
             }
         }
@@ -310,14 +310,15 @@ class TaskStore: ObservableObject{
             
             day = dateFormatter.string(from: T.date_of_activity ?? Date())
             switch(day){
-            case "Monday": percentageManager.PercentageUpdate(appliedTo: &percentageManager.monday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Tuesday": percentageManager.PercentageUpdate(appliedTo: &percentageManager.tuesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Wednesday": percentageManager.PercentageUpdate(appliedTo: &percentageManager.wednesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Thursday": percentageManager.PercentageUpdate(appliedTo: &percentageManager.thurday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Friday": percentageManager.PercentageUpdate(appliedTo: &percentageManager.friday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            case "Saturday": percentageManager.PercentageUpdate(appliedTo: &percentageManager.saturday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Monday","lunedì": percentageManager.PercentageUpdate(appliedTo: &percentageManager.monday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Tuesday", "martedì": percentageManager.PercentageUpdate(appliedTo: &percentageManager.tuesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Wednesday", "mercoledì": percentageManager.PercentageUpdate(appliedTo: &percentageManager.wednesday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Thursday", "giovedì": percentageManager.PercentageUpdate(appliedTo: &percentageManager.thurday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Friday", "venerdì": percentageManager.PercentageUpdate(appliedTo: &percentageManager.friday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            case "Saturday", "sabato": percentageManager.PercentageUpdate(appliedTo: &percentageManager.saturday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
             default: percentageManager.PercentageUpdate(appliedTo: &percentageManager.sunday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            }        }
+            }
+        }
     }
     
     func dateControl(controlledDate: Date)->String{

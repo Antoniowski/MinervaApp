@@ -28,6 +28,8 @@ struct NewChartComponent: View {
     }
     
     func incrementProgress() {
+//      Visto che il weekday deriva da un array fisso è possibile evitare
+//        la localizzazione dello switch
         switch(weekday){
         case "Monday": self.progressValue = sharedData.percentageManager.monday.percentage
         case "Tuesday": self.progressValue = sharedData.percentageManager.tuesday.percentage
