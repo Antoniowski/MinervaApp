@@ -19,29 +19,33 @@ struct InfoBadges: View{
     
     
     var body: some View{
-        VStack{
-            
-            ForEach(badges, id:\.self) { badge in  HStack{
-                Image(badge.image)
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width/3.5, height:UIScreen.main.bounds.width/3.5)
+//        NavigationView{
+            ScrollView{
                 VStack{
-                    Text(badge.title)
-                        .font(.system(size: 20))
-                        .bold()
-                        .frame(width: UIScreen.main.bounds.width*0.6, height:UIScreen.main.bounds.width/20, alignment: .leading)
-                    Text(badge.description)
-                        .frame(width: UIScreen.main.bounds.width*0.6, height:UIScreen.main.bounds.width/8, alignment: .leading)
-                        .foregroundColor(.black .opacity(0.8))
-                        
+                    
+                    ForEach(badges, id:\.self) { badge in  HStack{
+                        Image(badge.image)
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width/3.5, height:UIScreen.main.bounds.width/3.5)
+                        VStack{
+                            Text(badge.title)
+                                .font(.system(size: 20))
+                                .bold()
+                                .frame(width: UIScreen.main.bounds.width*0.6, height:UIScreen.main.bounds.width/20, alignment: .leading)
+                            Text(badge.description)
+                                .frame(width: UIScreen.main.bounds.width*0.6, height:UIScreen.main.bounds.width/8, alignment: .leading)
+                                .foregroundColor(.black .opacity(0.8))
                             
+                            
+                        }
+                        
+                    }
+                        Divider()
+                    }
+                    
                 }
-                
             }
-                Divider()
-            }
-            
-        }
+//        }
     }
 }
 struct InfoBadges_Preview: PreviewProvider {
