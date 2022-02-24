@@ -51,6 +51,7 @@ struct OnboardingView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                         .padding(.bottom)
+                        
                     
                     Text("Team Creation")
                         .font(.system(size: 20))
@@ -70,7 +71,7 @@ struct OnboardingView: View {
                         .font(.system(size: 14).weight(.light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .frame(width: UIScreen.main.bounds.width*0.65, height: UIScreen.main.bounds.width*0.8, alignment: .leading)
+                .frame(width: UIScreen.main.bounds.width*0.65, height: UIScreen.main.bounds.width*0.9, alignment: .leading)
                 
                 
                 
