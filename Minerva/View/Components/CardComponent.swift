@@ -18,7 +18,7 @@ struct CardComponent: View {
     var body: some View{
         ZStack{
             VStack{
-                NewChartComponent()
+                NewChartComponent(weekday: $weekday)
                     .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3)
                         
                         
@@ -27,10 +27,10 @@ struct CardComponent: View {
                 }.frame(width: 100, height: 10)
                 
                 VStack{
-                    Text("\(weekday)")
+                    Text(LocalizeStrings(weekday))
                         .font(.custom("Noteworthy-Bold", size: 25))
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
                     //                        .border(.blue)
-                    Text("Exercise...")
                     
                 } . frame(width: UIScreen.main.bounds.width/2.8, height: UIScreen.main.bounds.width/8, alignment: .leading)
                 //                    .border(.red)

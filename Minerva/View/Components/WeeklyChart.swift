@@ -11,13 +11,13 @@ import SwiftUI
 struct WeeklyChart: View {
     @EnvironmentObject var sharedData: TaskStore
     @Environment(\.colorScheme) var colorScheme
-    @State var progressValue: Float = 0.0
+    @State var progressValore: Float = 0.0
     
     var body: some View {
         ZStack{
             
             ZStack {
-                ProgressBar1(progress: self.$progressValue)
+                ProgressBarWeek(progress: self.$progressValore)
                     .frame(width: UIScreen.main.bounds.width*0.6, height: UIScreen.main.bounds.width*0.6)
                     .padding(40.0)
                 
@@ -27,27 +27,23 @@ struct WeeklyChart: View {
                     HStack{
                         Text("")
                     }
-                    .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8)
-                    
-                    
+                    .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.width*0.8)  
                 }
             }
-            
-            
         }
         .onAppear(perform: {
-            sharedData.PercentageUpdate()
-            incrementProgress()
+            sharedData.TotalPercentageUpdate()
+            incrementProgresso()
         })
         
     }
     
-    func incrementProgress() {
-        self.progressValue = sharedData.percentage
+    func incrementProgresso() {
+        self.progressValore = sharedData.percentageManager.week.percentage
     }
 }
 
-struct ProgressBar1: View {
+struct ProgressBarWeek: View {
     @EnvironmentObject var sharedData: TaskStore
     @Environment(\.colorScheme) var colorScheme
     @Binding var progress: Float

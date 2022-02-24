@@ -9,40 +9,40 @@ import Foundation
 import SwiftUI
 
 struct NewChartComponent: View {
+    @EnvironmentObject var sharedData: TaskStore
     
     @State var progressValue: Float = 0.0
+    @Binding var weekday: String
     
     var body: some View {
         ZStack{
             taskColor
                 .edgesIgnoringSafeArea(.all)
-            ZStack {
-                ProgressBar(progress: self.$progressValue)
+            ProgressBarDay(progress: self.$progressValue)
                     .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.width*0.3)
                     .padding(40.0)
-                
-                Button (action: {
-                    self.incrementProgress()
-                }) {
-                    HStack{
-                        Text("")
-                    }
-                    .frame(width: UIScreen.main.bounds.width*0.4, height: UIScreen.main.bounds.width*0.4)
-                }
-            }
-            
-            
         }
-        
+        .onAppear(perform: {
+            self.incrementProgress()
+        })
     }
     
     func incrementProgress() {
-        let randomValue: Float = 0.5
-        self.progressValue += randomValue
+//      Visto che il weekday deriva da un array fisso è possibile evitare
+//        la localizzazione dello switch
+        switch(weekday){
+        case "Monday": self.progressValue = sharedData.percentageManager.monday.percentage
+        case "Tuesday": self.progressValue = sharedData.percentageManager.tuesday.percentage
+        case "Wednesday": self.progressValue = sharedData.percentageManager.wednesday.percentage
+        case "Thursday": self.progressValue = sharedData.percentageManager.thurday.percentage
+        case "Friday": self.progressValue = sharedData.percentageManager.friday.percentage
+        case "Saturday": self.progressValue = sharedData.percentageManager.saturday.percentage
+        default: self.progressValue = sharedData.percentageManager.sunday.percentage
+        }
     }
 }
 
-struct ProgressBar: View {
+struct ProgressBarDay: View {
     @Binding var progress: Float
     
     var body: some View {
@@ -56,7 +56,7 @@ struct ProgressBar: View {
                 .stroke(style: StrokeStyle(lineWidth: 16.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(Color.blue)
                 .rotationEffect(Angle(degrees: 270.0))
-                .animation(.default, value: progress)
+                .animation(.easeInOut(duration: 1), value: progress)
             
             Text(String(format: "%.0f%%", min(self.progress, 1.0)*100.0))
                 .font(.system(size: 28))
@@ -65,9 +65,9 @@ struct ProgressBar: View {
         }
     }
 }
-struct ContentView_Previews3: PreviewProvider {
-    static var previews: some View {
-        NewChartComponent()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct ContentView_Previews3: PreviewProvider {
+//    static var previews: some View {
+//        NewChartComponent()
+//            .preferredColorScheme(.dark)
+//    }
+//}
