@@ -56,7 +56,7 @@ struct OnboardingView: View {
                         .font(.system(size: 20))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Join a team, organize a planner with other students and start your group studying session, sharing documents and common tasks.")
+                    Text("Create or join a team, organize a planner with other students and start your group studying session, sharing documents and common tasks.")
                         .font(.system(size: 14).weight(.light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
