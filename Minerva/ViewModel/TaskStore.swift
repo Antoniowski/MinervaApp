@@ -7,46 +7,60 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class TaskStore: ObservableObject{
     @Published var tasks: [TaskCD] = []
     @Published var orderedTask: [TaskCD] = []
     
+    @Published var weekBadges: [BadgeCD] = []
+    
     @Published var dateManager = DateManager()
     @Published var percentageManager = PercentageManager()
     
-//    @Published var percentage: Float = 0
+    @AppStorage("multitaskerTotalQty") var multitaskerTotalQty: Int = 0
+    @AppStorage("trooperTotalQty") var trooperTotalQty: Int = 0
+    @AppStorage("socialTotalQty") var socialTotalQty: Int = 0
+    @AppStorage("perfectionistTotalQty") var perfectionistTotalQty: Int = 0
     
-//    //    LE QUANTITA' SI RIFERISCONO SOLO ALLA SETTIMANA CORRENTE
-//    @Published var tasksQty: Int = 0
-//    @Published var lowQty: Float = 0
-//    @Published var midQty: Float = 0
-//    @Published var highQty: Float = 0
-//
-//    @Published var relLowWeight: Float = 0
-//    @Published var relMidWeight: Float = 0
-//    @Published var relHighWeight: Float = 0
-//
-//    private let lowWeight: Float = 0.75
-//    private let midWeight: Float = 1
-//    private let highWeight: Float = 1.25
+    @AppStorage("multitaskerIsDone") var multitaskerIsDone: Bool = false
+    @AppStorage("trooperIsDone") var trooperIsDone: Bool = false
+    @AppStorage("socialIsDone") var socialIsDone: Bool = false
+    @AppStorage("perfectIsDone") var perfectIsDone: Bool = false
     
-    
+    private enum badgeTitle: String{
+        case multitasker = "The Multitasker"
+        case trooper = "The Trooper"
+        case social = "The Social"
+        case perfectionist = "The Perfectionist"
+    }
     
     init(){
         FetchTasks()
+        FetchBadges()
     }
-    
+//    FETCH FUNCTIONS ************************
     func FetchTasks(){
         let request = NSFetchRequest<TaskCD>(entityName: "TaskCD")
         do{
             tasks = try TaskControllerCD.shared.dataContainer.viewContext.fetch(request)
         }catch{
-            print("ERROR IN FETCHING error \(error)")
+            print("ERROR IN FETCHING TASKS error \(error)")
         }
     }
     
-    //ADD FUNC
+    func FetchBadges(){
+        let request = NSFetchRequest<BadgeCD>(entityName: "BadgeCD")
+        do{
+            weekBadges = try TaskControllerCD.shared.dataContainer.viewContext.fetch(request)
+        }catch{
+            print("ERROR IN FETCHING BADGES error \(error)")
+        }
+    }
+    
+    //ADD FUNC *****************************
+    
+    
     func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date = Date()){
         let task = TaskCD(context: TaskControllerCD.shared.dataContainer.viewContext)
         task.title = title
@@ -75,23 +89,21 @@ class TaskStore: ObservableObject{
         }
     }
     
-    func AddStatusBool(){
-        let statusBool = AppStatusInfo(context: TaskControllerCD.shared.dataContainer.viewContext)
-        
-    newUserControll:
-        if GetAppInfo().isEmpty == false{
-            break newUserControll
-        }else{
-            statusBool.newUser = true
-            
-            do{
-                try TaskControllerCD.shared.dataContainer.viewContext.save()
-            }catch{
-                print("Add Status Bool Failed")
-            }
-            
+    
+    func AddNewBadge(title: String, description: String, date: Date, image: String){
+        let badge = BadgeCD(context: TaskControllerCD.shared.dataContainer.viewContext)
+        badge.title = title
+        badge.descriptionOfArchievement = description
+        badge.date = date
+        badge.image = image
+        do{
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
+        }catch{
+            print("Failed save")
         }
     }
+    
+//    DELETE FUNCTIONS  ****************************
     
     func DeleteTask(task: TaskCD){
 
@@ -101,6 +113,16 @@ class TaskStore: ObservableObject{
             dateManager.GetLastMonday()
             dateManager.GetSunday()
             percentageManager.UpdateAfterDelete(task: task, begin: dateManager.startingDay, end: dateManager.endingDay)
+            }catch{
+            TaskControllerCD.shared.dataContainer.viewContext.rollback()
+            print("Delete Failed")
+        }
+    }
+    
+    func DeleteTask(badge: BadgeCD){
+        TaskControllerCD.shared.dataContainer.viewContext.delete(badge)
+        do{
+            try TaskControllerCD.shared.dataContainer.viewContext.save()
             }catch{
             TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Delete Failed")
@@ -124,6 +146,7 @@ class TaskStore: ObservableObject{
                 dateManager.GetLastMonday()
                 dateManager.GetSunday()
                 percentageManager.UpdateAfterUpdateCompletedStatus(task: task, begin: dateManager.startingDay, end: dateManager.endingDay)
+                MultitaskerControl()
         }catch{
             TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
@@ -203,27 +226,7 @@ class TaskStore: ObservableObject{
             orderedTask = arrayHigh+arrayMid+arrayLow
         }
     }
-    
-    //recupera il vettore dei bool
-    func GetAppInfo()->[AppStatusInfo]{
-        let fetchRequest: NSFetchRequest<AppStatusInfo> = AppStatusInfo.fetchRequest()
-        do{
-            return try TaskControllerCD.shared.dataContainer.viewContext.fetch(fetchRequest)
-        }catch{
-            return []
-        }
-    }
-    
-    func GetNewUserStatus()->Bool{
-        let fetchRequest: NSFetchRequest<AppStatusInfo> = AppStatusInfo.fetchRequest()
-        do{
-            return try TaskControllerCD.shared.dataContainer.viewContext.fetch(fetchRequest)[0].newUser
-        }catch{
-            print("FAILED FETCH")
-            return false
-        }
-    }
-    
+
     
     //    ******FUNZIONI PER LA PERCENTUALE******
     
@@ -306,7 +309,9 @@ class TaskStore: ObservableObject{
         
         
         for T in tasks{
+//            WEEK PERCENTAGE
             percentageManager.PercentageUpdate(appliedTo: &percentageManager.week,T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
+            MultitaskerControl()
             
             day = dateFormatter.string(from: T.date_of_activity ?? Date())
             switch(day){
@@ -326,5 +331,37 @@ class TaskStore: ObservableObject{
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: controlledDate)
     }
+    
+    
+    
+    
+    
+    
+//     *********************************************
+//    FUNZIONI PER IL CONTROLLO DELLA SEZIONE BADGE
+//    **********************************************
+    
+    
+    
+    
+    func MultitaskerControl(){
+        if percentageManager.week.percentage >= 0.5{
+            if multitaskerIsDone == false{
+                multitaskerIsDone = true
+                multitaskerTotalQty += 1
+            }
+        }else{
+            if multitaskerIsDone{
+                multitaskerIsDone = false
+                multitaskerTotalQty -= 1
+            }
+        }
+    }
+}
+
+struct Badge: Hashable{
+    var title: String
+    var description: String
+    var image: String
 }
 

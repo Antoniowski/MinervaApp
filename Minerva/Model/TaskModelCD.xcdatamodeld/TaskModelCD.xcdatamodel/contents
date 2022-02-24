@@ -3,6 +3,12 @@
     <entity name="AppStatusInfo" representedClassName="AppStatusInfo" syncable="YES" codeGenerationType="class">
         <attribute name="newUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
+    <entity name="BadgeCD" representedClassName="BadgeCD" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionOfArchievement" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="TaskCD" representedClassName="TaskCD" syncable="YES" codeGenerationType="class">
         <attribute name="activity_description" optional="YES" attributeType="String"/>
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -14,5 +20,6 @@
     <elements>
         <element name="AppStatusInfo" positionX="-45" positionY="36" width="128" height="44"/>
         <element name="TaskCD" positionX="-54" positionY="-9" width="128" height="119"/>
+        <element name="BadgeCD" positionX="-45" positionY="36" width="128" height="89"/>
     </elements>
 </model>

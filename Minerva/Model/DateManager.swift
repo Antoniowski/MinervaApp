@@ -55,6 +55,10 @@ class DateManager{
     func GetSunday(){
         endingDay = startingDay + week - 1
     }
+    
+    func GetToday()->String{
+        return Date().formatted(date: .long, time: .omitted)
+    }
 }
 
 
