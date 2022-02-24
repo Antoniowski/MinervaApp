@@ -37,6 +37,7 @@
 		6AD7B07E27C4F17C004A1FD3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7B07D27C4F17C004A1FD3 /* Colors.swift */; };
 		6AD7B08027C52715004A1FD3 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7B07F27C52715004A1FD3 /* DateManager.swift */; };
 		6ADDE25C27C6D8FD00464D21 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6ADDE25A27C6D8FD00464D21 /* Localizable.strings */; };
+		9E6C269C27C7C63B000859B0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C269B27C7C63B000859B0 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		6AD7B07D27C4F17C004A1FD3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6AD7B07F27C52715004A1FD3 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		6ADDE25B27C6D8FD00464D21 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9E6C269B27C7C63B000859B0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Model/Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */,
 				6AD7B07D27C4F17C004A1FD3 /* Colors.swift */,
 				6ACDFACB27B69AA6008EF188 /* Assets.xcassets */,
+				9E6C269B27C7C63B000859B0 /* Launch Screen.storyboard */,
 				6ACDFACD27B69AA6008EF188 /* Preview Content */,
 			);
 			path = Minerva;
@@ -359,6 +362,7 @@
 			files = (
 				6ACDFACF27B69AA6008EF188 /* Preview Assets.xcassets in Resources */,
 				6ADDE25C27C6D8FD00464D21 /* Localizable.strings in Resources */,
+				9E6C269C27C7C63B000859B0 /* Launch Screen.storyboard in Resources */,
 				6ACDFACC27B69AA6008EF188 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +589,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -610,12 +615,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Minerva/Preview Content\"";
-				DEVELOPMENT_TEAM = YT6T4953M8;
+				DEVELOPMENT_TEAM = 6SG4QBNJ5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
