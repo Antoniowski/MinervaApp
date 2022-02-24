@@ -34,17 +34,17 @@ class DateManager{
         var monday: Date
         
         switch(todayWeekday){
-        case "Monday":
+        case "Monday", "lunedì":
             monday = today-currentTime
-        case "Tuesday":
+        case "Tuesday", "martedì":
             monday = today-day-currentTime
-        case "Wednesday":
+        case "Wednesday", "mercoledì":
             monday = today-2*day-currentTime
-        case "Thursday":
+        case "Thursday", "giovedì":
             monday = today-3*day-currentTime
-        case "Friday":
+        case "Friday", "venerdì":
             monday = today-4*day-currentTime
-        case "Saturday":
+        case "Saturday", "sabato":
             monday = today-5*day-currentTime
         default:
             monday = today-6*day-currentTime
