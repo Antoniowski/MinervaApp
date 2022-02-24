@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct Badge{
-    var isDone: Bool
+struct Badge: Hashable{
+//    static func == (lhs: Badge, rhs: Badge) -> Bool{}
+    var isDone: Bool = false
     var title: String
     var description: String
     var image: String
-    var unlockMethod: String
+    var unlockMethod: String = ""
 }
 
 class BadgeManager{
