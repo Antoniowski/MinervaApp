@@ -17,9 +17,11 @@
 		6335CAFD27BAA85E00F03957 /* NewTaskModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */; };
 		63D94E8E27C3CCD60058BEDB /* NewChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D94E8D27C3CCD60058BEDB /* NewChartComponent.swift */; };
 		63D94E9027C3E2920058BEDB /* WeeklyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */; };
+		63F4881927C7E3A10087918C /* InfoBadges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4881827C7E3A10087918C /* InfoBadges.swift */; };
 		63FEA13727BFD90B002F16B6 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEA13627BFD90B002F16B6 /* CardComponent.swift */; };
 		6A09180A27BF02480081A72B /* TaskRectangleEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09180927BF02480081A72B /* TaskRectangleEdit.swift */; };
 		6A09180F27BFD9000081A72B /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09180E27BFD9000081A72B /* TaskStore.swift */; };
+		6A5300F527C7E0F5003AF5B2 /* BadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5300F427C7E0F5003AF5B2 /* BadgeManager.swift */; };
 		6A6DD79227BD513000007B10 /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DD79127BD513000007B10 /* LanguageSelector.swift */; };
 		6A9ED7BC27C6794200A14959 /* PercentageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9ED7BB27C6794200A14959 /* PercentageManager.swift */; };
 		6ACDFAC827B69AA5008EF188 /* MinervaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */; };
@@ -68,9 +70,11 @@
 		6335CAFC27BAA85E00F03957 /* NewTaskModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModal.swift; sourceTree = "<group>"; };
 		63D94E8D27C3CCD60058BEDB /* NewChartComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChartComponent.swift; sourceTree = "<group>"; };
 		63D94E8F27C3E2920058BEDB /* WeeklyChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChart.swift; sourceTree = "<group>"; };
+		63F4881827C7E3A10087918C /* InfoBadges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBadges.swift; sourceTree = "<group>"; };
 		63FEA13627BFD90B002F16B6 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		6A09180927BF02480081A72B /* TaskRectangleEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRectangleEdit.swift; sourceTree = "<group>"; };
 		6A09180E27BFD9000081A72B /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
+		6A5300F427C7E0F5003AF5B2 /* BadgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeManager.swift; sourceTree = "<group>"; };
 		6A6DD79127BD513000007B10 /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
 		6A9ED7BB27C6794200A14959 /* PercentageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageManager.swift; sourceTree = "<group>"; };
 		6ABACE6027C7D94600902473 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				632B7ECC27BD3A500029DD0A /* StatsView.swift */,
+				63F4881827C7E3A10087918C /* InfoBadges.swift */,
 				632B7ED027BD3AD40029DD0A /* NavViewStats.swift */,
 			);
 			path = Stats;
@@ -176,6 +181,7 @@
 				6ACDFAF127B69AD9008EF188 /* Model */,
 				6ACDFAC727B69AA5008EF188 /* MinervaApp.swift */,
 				6AD7B07D27C4F17C004A1FD3 /* Colors.swift */,
+				6ACDFAF927B6A5CD008EF188 /* UselfulThings.swift */,
 				6ACDFACB27B69AA6008EF188 /* Assets.xcassets */,
 				9E6C269B27C7C63B000859B0 /* Launch Screen.storyboard */,
 				6ACDFACD27B69AA6008EF188 /* Preview Content */,
@@ -211,8 +217,10 @@
 		6ACDFAF127B69AD9008EF188 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6AD7B07F27C52715004A1FD3 /* DateManager.swift */,
+				6A9ED7BB27C6794200A14959 /* PercentageManager.swift */,
+				6A5300F427C7E0F5003AF5B2 /* BadgeManager.swift */,
 				6ACDFAFE27B6A939008EF188 /* TaskControllerCD.swift */,
-				6ACDFAF927B6A5CD008EF188 /* UselfulThings.swift */,
 				6ACDFB0027B6AFA2008EF188 /* TaskModelCD.xcdatamodeld */,
 			);
 			path = Model;
@@ -236,8 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				6A09180E27BFD9000081A72B /* TaskStore.swift */,
-				6AD7B07F27C52715004A1FD3 /* DateManager.swift */,
-				6A9ED7BB27C6794200A14959 /* PercentageManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,9 +401,11 @@
 				6A9ED7BC27C6794200A14959 /* PercentageManager.swift in Sources */,
 				6ACDFACA27B69AA5008EF188 /* MainView.swift in Sources */,
 				63D94E9027C3E2920058BEDB /* WeeklyChart.swift in Sources */,
+				6A5300F527C7E0F5003AF5B2 /* BadgeManager.swift in Sources */,
 				6A09180F27BFD9000081A72B /* TaskStore.swift in Sources */,
 				6A09180A27BF02480081A72B /* TaskRectangleEdit.swift in Sources */,
 				63D94E8E27C3CCD60058BEDB /* NewChartComponent.swift in Sources */,
+				63F4881927C7E3A10087918C /* InfoBadges.swift in Sources */,
 				6ACDFAF627B6A2AD008EF188 /* MyPlannerView.swift in Sources */,
 				632B7ED327BD3D020029DD0A /* OnboardingView.swift in Sources */,
 				632B7ECF27BD3AC50029DD0A /* NavViewTeam.swift in Sources */,

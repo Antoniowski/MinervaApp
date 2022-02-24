@@ -32,10 +32,17 @@ struct StatsView: View {
                 .padding(.bottom,6)
                 Divider()
                 
-                Text("Badges")
+                HStack{
+                    Text("Badges")
                     .font(.custom("Noteworthy-Bold", size: 30))
                     . frame(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.width/11, alignment: .leading)
-                
+                    
+                    Button (action: {
+                        print("Pagina Info Badges")
+                    }, label: {
+                        Image(systemName: "info.circle")
+                    })
+                }
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{

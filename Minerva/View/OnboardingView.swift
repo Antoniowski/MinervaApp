@@ -74,27 +74,27 @@ struct OnboardingView: View {
                 
                 
                 
-                Text("Please select preferred language:")
-                    .frame(height: 20)
-                    .padding(.vertical, 15)
+//                Text("Please select preferred language:")
+//                    .frame(height: 20)
+//                    .padding(.vertical, 15)
                 
-                HStack(alignment: .top , spacing: UIScreen.main.bounds.width/12){
-                    Button{
-                        italySelected = true
-                        englishSelected = false
-                        print ("Hai selezionato Italiano")
-                    } label: {
-                        LanguageSelector(isSelected: $italySelected, language: "flagItaly")
-                    }
-                    
-                    Button{
-                        englishSelected = true
-                        italySelected = false
-                        print ("You selected English")
-                    } label: {
-                        LanguageSelector(isSelected: $englishSelected, language: "flagUK")
-                    }
-                }
+//                HStack(alignment: .top , spacing: UIScreen.main.bounds.width/12){
+//                    Button{
+//                        italySelected = true
+//                        englishSelected = false
+//                        print ("Hai selezionato Italiano")
+//                    } label: {
+//                        LanguageSelector(isSelected: $italySelected, language: "flagItaly")
+//                    }
+//                    
+//                    Button{
+//                        englishSelected = true
+//                        italySelected = false
+//                        print ("You selected English")
+//                    } label: {
+//                        LanguageSelector(isSelected: $englishSelected, language: "flagUK")
+//                    }
+//                }
                 HStack{}.frame(minHeight: 0, maxHeight: .infinity)
 
                 Button(action:{
