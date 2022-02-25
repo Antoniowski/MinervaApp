@@ -32,8 +32,12 @@ struct WeeklyChart: View {
             }
         }
         .onAppear(perform: {
+//            print("NUMERO OLD: \(sharedData.multitaskerTotalQty)")
+//            print("STATO OLD: \(sharedData.multitaskerIsDone)")
             sharedData.TotalPercentageUpdate()
             incrementProgresso()
+//            print("NUMERO NEW: \(sharedData.multitaskerTotalQty)")
+//            print("STATO NEw: \(sharedData.multitaskerIsDone)")
         })
         
     }

@@ -13,33 +13,19 @@ class TaskStore: ObservableObject{
     @Published var tasks: [TaskCD] = []
     @Published var orderedTask: [TaskCD] = []
     
-    @Published var weekBadges: [BadgeCD] = []
-    
     @Published var dateManager = DateManager()
     @Published var percentageManager = PercentageManager()
-    
-    @AppStorage("multitaskerTotalQty") var multitaskerTotalQty: Int = 0
-    @AppStorage("trooperTotalQty") var trooperTotalQty: Int = 0
-    @AppStorage("socialTotalQty") var socialTotalQty: Int = 0
-    @AppStorage("perfectionistTotalQty") var perfectionistTotalQty: Int = 0
-    
-    @AppStorage("multitaskerIsDone") var multitaskerIsDone: Bool = false
-    @AppStorage("trooperIsDone") var trooperIsDone: Bool = false
-    @AppStorage("socialIsDone") var socialIsDone: Bool = false
-    @AppStorage("perfectIsDone") var perfectIsDone: Bool = false
-    
-    private enum badgeTitle: String{
-        case multitasker = "The Multitasker"
-        case trooper = "The Trooper"
-        case social = "The Social"
-        case perfectionist = "The Perfectionist"
-    }
+//    @Published var badgeManager = BadgeManager()
+
     
     init(){
         FetchTasks()
-        FetchBadges()
     }
+    
+//    ****************************************
 //    FETCH FUNCTIONS ************************
+//    ****************************************
+
     func FetchTasks(){
         let request = NSFetchRequest<TaskCD>(entityName: "TaskCD")
         do{
@@ -49,16 +35,31 @@ class TaskStore: ObservableObject{
         }
     }
     
-    func FetchBadges(){
-        let request = NSFetchRequest<BadgeCD>(entityName: "BadgeCD")
-        do{
-            weekBadges = try TaskControllerCD.shared.dataContainer.viewContext.fetch(request)
-        }catch{
-            print("ERROR IN FETCHING BADGES error \(error)")
+    func FetchOrdered(){
+        let array = GetAllTaskArray()
+        var arrayLow: [TaskCD] = []
+        var arrayMid: [TaskCD] = []
+        var arrayHigh: [TaskCD] = []
+        
+        if array.isEmpty{
+            orderedTask = []
+            print("No Items")
+        }else{
+            for T in array{
+                switch(T.priority){
+                case "a": arrayLow.append(T)
+                case "b": arrayMid.append(T)
+                case "c": arrayHigh.append(T)
+                default: print("ciao")
+                }
+            }
+            orderedTask = arrayHigh+arrayMid+arrayLow
         }
     }
     
+    //    **********************************
     //ADD FUNC *****************************
+    //    **********************************
     
     
     func AddTask(title: String, description: String, priority: PriorityLevel, completed: Bool = false, date: Date = Date()){
@@ -90,20 +91,10 @@ class TaskStore: ObservableObject{
     }
     
     
-    func AddNewBadge(title: String, description: String, date: Date, image: String){
-        let badge = BadgeCD(context: TaskControllerCD.shared.dataContainer.viewContext)
-        badge.title = title
-        badge.descriptionOfArchievement = description
-        badge.date = date
-        badge.image = image
-        do{
-            try TaskControllerCD.shared.dataContainer.viewContext.save()
-        }catch{
-            print("Failed save")
-        }
-    }
-    
-//    DELETE FUNCTIONS  ****************************
+//    *********************************************
+//    DELETE FUNCTIONS  ***************************
+//    *********************************************
+
     
     func DeleteTask(task: TaskCD){
 
@@ -119,18 +110,11 @@ class TaskStore: ObservableObject{
         }
     }
     
-    func DeleteTask(badge: BadgeCD){
-        TaskControllerCD.shared.dataContainer.viewContext.delete(badge)
-        do{
-            try TaskControllerCD.shared.dataContainer.viewContext.save()
-            }catch{
-            TaskControllerCD.shared.dataContainer.viewContext.rollback()
-            print("Delete Failed")
-        }
-    }
     
-    
+    //    *********************************************
     //    UPDATE FUNCTIONS
+    //    *********************************************
+
     
     func UpdateTask2(task: TaskCD, title: String, desc: String, priority: PriorityLevel){
         let taskAppoggio = task
@@ -146,7 +130,6 @@ class TaskStore: ObservableObject{
                 dateManager.GetLastMonday()
                 dateManager.GetSunday()
                 percentageManager.UpdateAfterUpdateCompletedStatus(task: task, begin: dateManager.startingDay, end: dateManager.endingDay)
-                MultitaskerControl()
         }catch{
             TaskControllerCD.shared.dataContainer.viewContext.rollback()
             print("Update Failed")
@@ -191,11 +174,12 @@ class TaskStore: ObservableObject{
         }
     }
     
-    func SetFalseNewUser(user: AppStatusInfo){
-        user.newUser = false
-    }
+    //    *********************************************
+    //    GET FUNCTIONS *****************************
+    //    *********************************************
+
     
-    //    GET FUNC
+    
     func GetAllTaskArray()->[TaskCD]{
         let fetchRequest: NSFetchRequest<TaskCD> = TaskCD.fetchRequest()
         do{
@@ -205,30 +189,11 @@ class TaskStore: ObservableObject{
         }
     }
     
-    func FetchOrdered(){
-        let array = GetAllTaskArray()
-        var arrayLow: [TaskCD] = []
-        var arrayMid: [TaskCD] = []
-        var arrayHigh: [TaskCD] = []
-        
-        if array.isEmpty{
-            orderedTask = []
-            print("No Items")
-        }else{
-            for T in array{
-                switch(T.priority){
-                case "a": arrayLow.append(T)
-                case "b": arrayMid.append(T)
-                case "c": arrayHigh.append(T)
-                default: print("ciao")
-                }
-            }
-            orderedTask = arrayHigh+arrayMid+arrayLow
-        }
-    }
 
-    
-    //    ******FUNZIONI PER LA PERCENTUALE******
+
+//    *********************************************
+//    ****** FUNZIONI PER LA PERCENTUALE **********
+//    *********************************************
     
     func TotalTasksQtyUpdate(){
         let dateFormatter = DateFormatter()
@@ -311,7 +276,6 @@ class TaskStore: ObservableObject{
         for T in tasks{
 //            WEEK PERCENTAGE
             percentageManager.PercentageUpdate(appliedTo: &percentageManager.week,T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
-            MultitaskerControl()
             
             day = dateFormatter.string(from: T.date_of_activity ?? Date())
             switch(day){
@@ -332,36 +296,6 @@ class TaskStore: ObservableObject{
         return dateFormatter.string(from: controlledDate)
     }
     
-    
-    
-    
-    
-    
-//     *********************************************
-//    FUNZIONI PER IL CONTROLLO DELLA SEZIONE BADGE
-//    **********************************************
-    
-    
-    
-    
-    func MultitaskerControl(){
-        if percentageManager.week.percentage >= 0.5{
-            if multitaskerIsDone == false{
-                multitaskerIsDone = true
-                multitaskerTotalQty += 1
-            }
-        }else{
-            if multitaskerIsDone{
-                multitaskerIsDone = false
-                multitaskerTotalQty -= 1
-            }
-        }
-    }
 }
 
-struct Badge: Hashable{
-    var title: String
-    var description: String
-    var image: String
-}
 

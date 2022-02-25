@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 
-
 struct InfoBadges: View{
     @State private var badges: [Badge] = [
         Badge(title: "The Multitasker", description: "Complete 50% or more of daily tasks", image: "Multitasker"),
