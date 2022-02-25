@@ -61,8 +61,8 @@ struct StatsView: View {
                                 .frame(width: UIScreen.main.bounds.width/3.5, height:UIScreen.main.bounds.width/3.5)
                                 Text(badge.title)
                                     .font(.system(size: 11))
-                                Text("x1")
-                                    .font(.system(size: 13))
+//                                Text("x1")
+//                                    .font(.system(size: 13))
                             }
                         }
                         }
