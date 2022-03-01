@@ -59,6 +59,37 @@ class DateManager{
     func GetToday()->String{
         return Date().formatted(date: .long, time: .omitted)
     }
+    
+    func GetMonday(referredDate: Date)->Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        
+        let todayWeekday: String = dateFormatter.string(from: referredDate)
+        let currentTime: Double = timeFormatter.string(from: referredDate).numberOfSeconds()
+        var monday: Date
+        
+        switch(todayWeekday){
+        case "Monday", "lunedì":
+            monday = referredDate-currentTime + 3600
+        case "Tuesday", "martedì":
+            monday = referredDate-day-currentTime + 3600
+        case "Wednesday", "mercoledì":
+            monday = referredDate-2*day-currentTime + 3600
+        case "Thursday", "giovedì":
+            monday = referredDate-3*day-currentTime + 3600
+        case "Friday", "venerdì":
+            monday = referredDate-4*day-currentTime + 3600
+        case "Saturday", "sabato":
+            monday = referredDate-5*day-currentTime + 3600
+        default:
+            monday = referredDate-6*day-currentTime + 3600
+            
+        }
+        return monday
+    }
 }
 
 
