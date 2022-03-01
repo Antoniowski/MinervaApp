@@ -15,7 +15,7 @@ class TaskStore: ObservableObject{
     
     @Published var dateManager = DateManager()
     @Published var percentageManager = PercentageManager()
-//    @Published var badgeManager = BadgeManager()
+    @Published var badgeManager = BadgeManager()
 
     
     init(){
@@ -287,6 +287,18 @@ class TaskStore: ObservableObject{
             case "Saturday", "sabato": percentageManager.PercentageUpdate(appliedTo: &percentageManager.saturday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
             default: percentageManager.PercentageUpdate(appliedTo: &percentageManager.sunday, T: T, begin: dateManager.startingDay, end: dateManager.endingDay)
             }
+        }
+        badgeManager.MultitaskerControl(percentageChecked: percentageManager.week.percentage)
+        badgeManager.PerfectControl(percentageChecked: percentageManager.week.percentage)
+        day = dateFormatter.string(from: Date())
+        switch(day){
+        case "Monday","lunedì": badgeManager.TrooperControl(percentageChecked: percentageManager.monday.percentage)
+        case "Tuesday", "martedì": badgeManager.TrooperControl(percentageChecked: percentageManager.tuesday.percentage)
+        case "Wednesday", "mercoledì": badgeManager.TrooperControl(percentageChecked: percentageManager.wednesday.percentage)
+        case "Thursday", "giovedì": badgeManager.TrooperControl(percentageChecked: percentageManager.thurday.percentage)
+        case "Friday", "venerdì": badgeManager.TrooperControl(percentageChecked: percentageManager.friday.percentage)
+        case "Saturday", "sabato": badgeManager.TrooperControl(percentageChecked: percentageManager.saturday.percentage)
+        default: badgeManager.TrooperControl(percentageChecked: percentageManager.sunday.percentage)
         }
     }
     
