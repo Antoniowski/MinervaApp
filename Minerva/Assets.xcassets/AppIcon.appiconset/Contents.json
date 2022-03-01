@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "newAppIcon 40-1.png",
+      "filename" : "Minerva 40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "newAppIcon 60.png",
+      "filename" : "Minerva 60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "newAppIcon 58-1.png",
+      "filename" : "Minerva 58.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "newAppIcon 87.png",
+      "filename" : "Minerva 87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "newAppIcon 80.png",
+      "filename" : "Minerva 80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "newAppIcon 120.png",
+      "filename" : "Minerva 120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "newAppIcon 120-1.png",
+      "filename" : "Minerva 120-1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "newAppIcon 180.png",
+      "filename" : "Minerva 180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "newAppIcon 20.png",
+      "filename" : "Minerva 20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "newAppIcon 40-2.png",
+      "filename" : "Minerva 40-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "newAppIcon 29.png",
+      "filename" : "Minerva 29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "newAppIcon 58.png",
+      "filename" : "Minerva 58-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "newAppIcon 40.png",
+      "filename" : "Minerva 40-2.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "newAppIcon 80-1.png",
+      "filename" : "Minerva 80-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "newAppIcon 76.png",
+      "filename" : "Minerva 76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "newAppIcon 152.png",
+      "filename" : "Minerva 152.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "newAppIcon 167.png",
+      "filename" : "Minerva 167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "newAppIcon 1024.png",
+      "filename" : "Minerva 1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
