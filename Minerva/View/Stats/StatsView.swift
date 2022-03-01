@@ -15,7 +15,7 @@ struct StatsView: View {
         Badge(title: "The Multitasker", description: "Complete 50% or more of daily tasks", image: "Multitasker"),
         Badge(title: "The Trooper", description: "Complete all daily tasks", image: "Trooper"),
         Badge(title: "The Social", description: "Join a new studying group", image: "Social"),
-        Badge(title: "The Pefectionist", description: "Complete all weekly tasks", image: "Perfectionist")]
+        Badge(title: "The Perfectionist", description: "Complete all weekly tasks", image: "Perfectionist")]
     var body: some View{
         VStack{
             
@@ -56,13 +56,61 @@ struct StatsView: View {
                     HStack{
                         ForEach(badges, id:\.self) { badge in  HStack{
                             VStack{
-                            Image(badge.image)
-                                .resizable()
-                                .frame(width: UIScreen.main.bounds.width/3.5, height:UIScreen.main.bounds.width/3.5)
+                                ZStack{
+                                    Image(badge.image)
+                                        .resizable()
+                                        .frame(width: UIScreen.main.bounds.width/3.5, height:UIScreen.main.bounds.width/3.5)
+                                    if badge.title == "The Multitasker"{
+                                        if UserDefaults.standard.bool(forKey: "multitaskerIsDone") == false{
+                                            ZStack{
+                                                Circle()
+                                                    .foregroundColor(.black.opacity(0.7))
+                                                Image(systemName: "lock.fill")
+                                                    .font(.system(size: 50))
+                                                    .foregroundColor(.white)
+                                            }
+                                            .frame(width: UIScreen.main.bounds.width/4.5, height:UIScreen.main.bounds.width/4.5, alignment: .center)
+                                        }
+                                    }
+                                    if badge.title == "The Trooper"{
+                                        if UserDefaults.standard.bool(forKey: "trooperIsDone") == false{
+                                            ZStack{
+                                                Circle()
+                                                    .foregroundColor(.black.opacity(0.7))
+                                                Image(systemName: "lock.fill")
+                                                    .font(.system(size: 50))
+                                                    .foregroundColor(.white)
+                                            }
+                                            .frame(width: UIScreen.main.bounds.width/4.5, height:UIScreen.main.bounds.width/4.5, alignment: .center)
+                                        }
+                                    }
+                                    if badge.title == "The Social"{
+                                        if UserDefaults.standard.bool(forKey: "socialIsDone") == false{
+                                            ZStack{
+                                                Circle()
+                                                    .foregroundColor(.black.opacity(0.7))
+                                                Image(systemName: "lock.fill")
+                                                    .font(.system(size: 50))
+                                                    .foregroundColor(.white)
+                                            }
+                                            .frame(width: UIScreen.main.bounds.width/4.5, height:UIScreen.main.bounds.width/4.5, alignment: .center)
+                                        }
+                                    }
+                                    if badge.title == "The Perfectionist"{
+                                        if UserDefaults.standard.bool(forKey: "perfectIsDone") == false{
+                                            ZStack{
+                                                Circle()
+                                                    .foregroundColor(.black.opacity(0.7))
+                                                Image(systemName: "lock.fill")
+                                                    .font(.system(size: 50))
+                                                    .foregroundColor(.white)
+                                            }
+                                            .frame(width: UIScreen.main.bounds.width/4.5, height:UIScreen.main.bounds.width/4.5, alignment: .center)
+                                        }
+                                    }
+                                }
                                 Text(badge.title)
                                     .font(.system(size: 11))
-//                                Text("x1")
-//                                    .font(.system(size: 13))
                             }
                         }
                         }

@@ -31,14 +31,69 @@ class BadgeManager{
             if multitaskerIsDone == false{
                 multitaskerIsDone = true
                 multitaskerTotalQty += 1
+                print("MLTSK DONE")
+                print("\(multitaskerTotalQty)")
             }
         }else{
             if multitaskerIsDone == true{
                 multitaskerIsDone = false
                 multitaskerTotalQty -= 1
+                print("MLTSK UNDONE")
+                print("\(multitaskerTotalQty)")
+
             }
         }
     }
+    
+    func TrooperControl(percentageChecked: Float){
+        if percentageChecked == 1{
+            if trooperIsDone == false{
+                trooperIsDone = true
+                trooperTotalQty += 1
+                print("TROOPER DONE")
+                print("\(trooperTotalQty)")
+            }
+        }else{
+            if trooperIsDone == true{
+                trooperIsDone = false
+                trooperTotalQty -= 1
+                print("TROOPER UNDONE")
+                print("\(trooperTotalQty)")
+
+            }
+        }
+    }
+    
+    func PerfectControl(percentageChecked: Float){
+        if percentageChecked >= 1{
+            if perfectIsDone == false{
+                perfectIsDone = true
+                perfectionistTotalQty += 1
+                print("MLTSK DONE")
+                print("\(perfectionistTotalQty)")
+            }
+        }else{
+            if perfectIsDone == true{
+                perfectIsDone = false
+                perfectionistTotalQty -= 1
+                print("MLTSK UNDONE")
+                print("\(perfectionistTotalQty)")
+
+            }
+        }
+    }
+    
+    func DailyReset(){
+        trooperIsDone = false
+    }
+    
+    func WeeklyReset(){
+        DailyReset()
+        multitaskerIsDone = false
+        socialIsDone = false
+        perfectIsDone = false
+    }
+
 }
 
 struct Badge: Hashable{

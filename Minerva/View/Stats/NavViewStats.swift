@@ -15,7 +15,8 @@ extension MainView {
                 .toolbar {
                     ToolbarItem(placement: .navigation, content: {
                         Text("Statistics")
-                            .font(.custom("Noteworthy-Bold", size: 35))
+                            .font(.largeTitle).bold()
+//                            .font(.custom("Noteworthy-Bold", size: 35))
                     })
                 }
                 
