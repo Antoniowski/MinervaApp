@@ -28,11 +28,11 @@ struct InfoBadges: View{
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width/3.5, height:UIScreen.main.bounds.width/3.5)
                         VStack{
-                            Text(badge.title)
+                            Text(LocalizeStrings(badge.title))
                                 .font(.system(size: 20))
                                 .bold()
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            Text(badge.description)
+                            Text(LocalizeStrings(badge.description))
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         }
                         ZStack{
