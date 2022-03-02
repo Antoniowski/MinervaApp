@@ -109,12 +109,30 @@
 /* No comment provided by engineer. */
 "Keep track of your weekly achievements and productivity, complete tasks and other functions to earn badges." = "Tieni traccia dei tuoi risultati settimanali e della tua produttività, completa le attività e altre funzioni per guadagnare le medaglie.";
 
-
 /* No comment provided by engineer. */
 "Continue" = "Continua";
-
 
 /* No comment provided by engineer. */
 "Daily Planner" = "Planner Giornaliero";
 
+/* No comment provided by engineer. */
+"The Multitasker" = "Il Multitasker";
+
+/* No comment provided by engineer. */
+"Complete 50% or more of weekly tasks" = "Completa il 50% o più delle attività settimanali";
+
+/* No comment provided by engineer. */
+"Complete all daily tasks" = "Completa tutte le attività giornaliere";
+
+/* No comment provided by engineer. */
+"The Social" = "Il Social";
+
+/* No comment provided by engineer. */
+"Join a new studying group"  = "Unisciti ad un nuovo gruppo di studio";
+
+/* No comment provided by engineer. */
+"The Perfectionist" = "Il Perfezionista";
+
+/* No comment provided by engineer. */
+"Complete all weekly tasks" = "Completa tutte le attività settimanali";
 

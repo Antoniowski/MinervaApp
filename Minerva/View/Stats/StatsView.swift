@@ -109,7 +109,7 @@ struct StatsView: View {
                                         }
                                     }
                                 }
-                                Text(badge.title)
+                                Text(LocalizeStrings(badge.title))
                                     .font(.system(size: 11))
                             }
                         }

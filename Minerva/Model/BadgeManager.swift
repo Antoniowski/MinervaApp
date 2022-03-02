@@ -31,16 +31,11 @@ class BadgeManager{
             if multitaskerIsDone == false{
                 multitaskerIsDone = true
                 multitaskerTotalQty += 1
-                print("MLTSK DONE")
-                print("\(multitaskerTotalQty)")
             }
         }else{
             if multitaskerIsDone == true{
                 multitaskerIsDone = false
                 multitaskerTotalQty -= 1
-                print("MLTSK UNDONE")
-                print("\(multitaskerTotalQty)")
-
             }
         }
     }
@@ -50,16 +45,11 @@ class BadgeManager{
             if trooperIsDone == false{
                 trooperIsDone = true
                 trooperTotalQty += 1
-                print("TROOPER DONE")
-                print("\(trooperTotalQty)")
             }
         }else{
             if trooperIsDone == true{
                 trooperIsDone = false
                 trooperTotalQty -= 1
-                print("TROOPER UNDONE")
-                print("\(trooperTotalQty)")
-
             }
         }
     }
@@ -69,16 +59,11 @@ class BadgeManager{
             if perfectIsDone == false{
                 perfectIsDone = true
                 perfectionistTotalQty += 1
-                print("MLTSK DONE")
-                print("\(perfectionistTotalQty)")
             }
         }else{
             if perfectIsDone == true{
                 perfectIsDone = false
                 perfectionistTotalQty -= 1
-                print("MLTSK UNDONE")
-                print("\(perfectionistTotalQty)")
-
             }
         }
     }
