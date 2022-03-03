@@ -40,9 +40,15 @@ struct NewTaskModal: View{
                         HStack{
                             Text("High")
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            if priorityValue == .high{
-                                Image(systemName: "checkmark")
-                            }
+                                .foregroundColor(priorityValue == .high ? .blue : .secondary)
+                            Image(systemName: "1.circle")
+                                .font(.system(size: 25))
+                                .foregroundColor(priorityValue == .high ? .blue : .secondary)
+                            
+
+//                            if priorityValue == .high{
+//                                Image(systemName: "checkmark")
+//                            }
                         }
                     })
                     
@@ -52,10 +58,15 @@ struct NewTaskModal: View{
                         HStack{
                             Text("Medium")
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(priorityValue == .mid ? .blue : .secondary)
+                            Image(systemName: "2.circle")
+                                .font(.system(size: 25))
+                                .foregroundColor(priorityValue == .mid ? .blue : .secondary)
+
                             
-                            if priorityValue == .mid{
-                                Image(systemName: "checkmark")
-                            }
+//                            if priorityValue == .mid{
+//                                Image(systemName: "checkmark")
+//                            }
                         }
                     })
                     
@@ -65,10 +76,14 @@ struct NewTaskModal: View{
                         HStack{
                             Text("Low")
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(priorityValue == .low ? .blue : .secondary)
+                            Image(systemName: "3.circle")
+                                .font(.system(size: 25))
+                                .foregroundColor(priorityValue == .low ? .blue : .secondary)
                             
-                            if priorityValue == .low{
-                                Image(systemName: "checkmark")
-                            }
+//                            if priorityValue == .low{
+//                                Image(systemName: "checkmark")
+//                            }
                         }
                     })
                 }
