@@ -16,6 +16,7 @@ struct NewTaskModal: View{
     @State var descriptionField: String = ""
     @State var priorityValue: PriorityLevel = .low
     @State var isEditing: Bool = false
+    @State private var showAlert: Bool = false
     @Binding var dateActivity: Date
     
     var referredTask: TaskCD = TaskCD()
@@ -85,16 +86,32 @@ struct NewTaskModal: View{
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {
                         if isEditing == false {
-                            sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
+                            if titleField != ""{
+                                sharedData.AddTask(title: titleField, description: descriptionField, priority: priorityValue, date: dateActivity)
+                                dismiss()
+                            }else{
+                                showAlert = true
+                            }
                         }
                         else {
-                            sharedData.UpdateTask2(task: referredTask, title: titleField, desc: descriptionField, priority: priorityValue)
+                            if titleField != ""{
+                                sharedData.UpdateTask2(task: referredTask, title: titleField, desc: descriptionField, priority: priorityValue)
+                                dismiss()
+                            }else{
+                                showAlert = true
+                            }
                         }
                         sharedData.FetchOrdered()
-                        dismiss()
                     }, label: {
                         Text("Save")
                     })
+                    .alert("Blank Title", isPresented: $showAlert) {
+                                        Button("OK") {
+                                            showAlert = false
+                                        }
+                                    } message: {
+                                        Text("Please insert a title for the task")
+                                    }
                 })
             }
         }

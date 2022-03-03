@@ -61,7 +61,7 @@ struct TaskRectangleEdit: View {
                 
                 if priority == .low {
                     VStack{
-                        Image(systemName: "1.circle")
+                        Image(systemName: "3.circle")
                             .font(.system(size: 30))
 //                        Circle()
 //                            .frame(width: 10, height: 10)
@@ -82,7 +82,7 @@ struct TaskRectangleEdit: View {
                 else {
                     
                     VStack{
-                        Image(systemName: "3.circle")
+                        Image(systemName: "1.circle")
                             .font(.system(size: 30))
 //                        Circle()
 //                            .frame(width: 10, height: 10)
