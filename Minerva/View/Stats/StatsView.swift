@@ -22,7 +22,7 @@ struct StatsView: View {
             ScrollView{
                 WeeklyChart()
                 Text("Percentage of tasks completed this week")
-                    . frame(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.width/10, alignment: .leading)
+                    . frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width/10, alignment: .center)
                 Divider()
                 
                 ScrollView(.horizontal, showsIndicators: false){

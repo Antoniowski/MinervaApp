@@ -55,29 +55,39 @@ struct TaskRectangle: View {
             
             if priority == .low {
                 VStack{
-                    Circle()
-                        .frame(width: 10, height: 10)
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+                    Image(systemName: "1.circle")
+                        .font(.system(size: 30))
                 }.frame(width: UIScreen.main.bounds.width/10, height: 40)
             }
             
             else if priority == .mid {
                 VStack{
-                    Circle()
-                        .frame(width: 10, height: 10)
-                    Circle()
-                        .frame(width: 10, height: 10)
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+                    Image(systemName: "2.circle")
+                        .font(.system(size: 30))
                 }
                 .frame(width: UIScreen.main.bounds.width/10, height: 40)
             }
             else {
                 
-                VStack{
-                    Circle()
-                        .frame(width: 10, height: 10)
-                    Circle()
-                        .frame(width: 10, height: 10)
-                    Circle()
-                        .frame(width: 10, height: 10)
+                ZStack{
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+//                    Circle()
+//                        .frame(width: 10, height: 10)
+                    
+                        Image(systemName: "3.circle")
+                            .font(.system(size: 30))
+                            //                        Text("3")
+//                            .font(.system(size: 19))
+//                            .offset(y: 2)
                 }
                 .frame(width: UIScreen.main.bounds.width/10, height: 40)
             }
